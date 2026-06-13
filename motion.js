@@ -52,9 +52,9 @@
     var typeEl = byId("heroType"), picker = byId("heroPicker"), query = byId("heroQuery"), fromEl = byId("heroFrom");
     var rows = [].slice.call(mock.querySelectorAll(".picker-row"));   // [Claude, ChatGPT, Gemini]
     var data = [
-      { from: "ChatGPT", idx: 0, to: "Claude",  text: "Conversation handed to Claude — the full thread, code and files came along. Continue right where you left off." },
-      { from: "Claude",  idx: 1, to: "ChatGPT", text: "Conversation handed to ChatGPT — nothing dropped. Pick up the thread on a fresh, roomy context window." },
-      { from: "Gemini",  idx: 2, to: "Gemini",  text: "Conversation handed to Gemini — the whole chat travels with you, in context. No copy-paste marathon." }
+      { from: "ChatGPT", idx: 0, to: "Claude",  text: "Copied for Claude — the whole thread, code and files included. Paste it in and pick up right where you left off." },
+      { from: "Claude",  idx: 1, to: "ChatGPT", text: "Copied for ChatGPT — and it flags anything it couldn't grab. Paste it into a fresh, roomy context window to continue the thread." },
+      { from: "Gemini",  idx: 2, to: "Gemini",  text: "Copied for Gemini — the whole chat comes with you, in context. Paste it in; no copy-paste-and-reconstruct." }
     ];
     function select(i) { rows.forEach(function (r, j) { r.classList.toggle("sel", i === j); }); }
     function type(el, txt, sp) {
@@ -81,7 +81,7 @@
       await sleep(720);
       picker.classList.add("gone");                   // "Enter" → hand off
       await sleep(340);
-      await type(typeEl, d.text, 20);                 // confirmation lands on arrival
+      await type(typeEl, d.text, 20);                 // confirmation of what's now on the clipboard
       await sleep(2600);
       n++;
     }
@@ -116,7 +116,7 @@
     [].forEach.call(document.querySelectorAll("#transferDemo"), initTransferDemo);
   }
   /* The "Try it" centerpiece: capture the sample thread → package it into a
-     portable prompt → hand it off to the chosen AI (typed into the destination).
+     portable prompt → copy it for the chosen AI (the user pastes it in).
      Entirely client-side: no real extension, no API, no network. */
   function initTransferDemo(root){
     var thread   = root.querySelector("#tdThread"),
@@ -173,17 +173,17 @@
       await sleep(reduce ? 0 : 640);
       msgs.forEach(function(m){ m.classList.remove("captured"); });
 
-      // 3 — hand it off (prompt is "auto-pasted" into the destination)
-      setStep("Handing off to " + to + "…");
+      // 3 — copy the prompt (the user pastes it into the destination)
+      setStep("Copying the prompt for " + to + "…");
       var head = document.createElement("span"); head.className = "pp-h"; head.textContent = "Portable prompt → " + to;
       var line = document.createElement("span"); line.className = "pp-line";
       body.appendChild(head); body.appendChild(line);
       var prompt = buildPrompt(to);
       if (reduce) line.textContent = prompt; else await type(line, prompt, 5);
 
-      setStep("Handed off ✓", true);
-      if (destHint) destHint.textContent = "context carried over";
-      if (status) status.textContent = "Transferred ✓";
+      setStep("Copied — paste into " + to + " to continue", true);
+      if (destHint) destHint.textContent = "ready to paste";
+      if (status) status.textContent = "Copied to clipboard ✓";
       var br = body.getBoundingClientRect(); burst(br.left + Math.min(br.width / 2, 170), br.top + 26);
       running = false; btn.disabled = false;
     }

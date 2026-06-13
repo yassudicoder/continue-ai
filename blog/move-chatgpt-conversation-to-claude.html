@@ -76,7 +76,7 @@
       <p class="tl-k">The short version</p>
       <ul>
         <li>Open the ChatGPT conversation you want to move.</li>
-        <li>Capture it, choose <strong>Claude</strong> as the destination, and hand it off — the thread is packaged into a portable prompt and dropped into a fresh Claude chat.</li>
+        <li>Capture it, choose <strong>Claude</strong> as the destination, and transfer — the thread is packaged into a portable prompt and copied to your clipboard, ready to paste into a fresh Claude chat.</li>
         <li>Claude continues with the full context instead of asking you to re-explain.</li>
         <li>It's local-first: nothing is uploaded to any server of ours.</li>
       </ul>
@@ -93,10 +93,10 @@
       <p>With Continue AI installed, the move is a single action:</p>
       <ul>
         <li><strong>1. Open the ChatGPT chat.</strong> The one you want Claude to continue.</li>
-        <li><strong>2. Capture it.</strong> Continue AI reads the full thread from the page — every turn, including code.</li>
-        <li><strong>3. Choose Claude and hand off.</strong> The conversation is packaged into a portable prompt and opened in a new Claude chat, ready to send.</li>
+        <li><strong>2. Capture it.</strong> Continue AI reads the full thread from the page — every turn, including code — and flags the capture if a long chat is hiding part of itself, so nothing goes missing silently.</li>
+        <li><strong>3. Choose Claude and copy.</strong> The conversation is packaged into a portable prompt and copied to your clipboard — open a new Claude chat, paste, and send.</li>
       </ul>
-      <p>Claude opens already knowing the conversation — so your next message is the actual next question, not a recap.</p>
+      <p>Once you paste, Claude picks up already knowing the conversation — so your next message is the actual next question, not a recap.</p>
 
       <div class="callout tip">
         <span class="ci">✅</span>
@@ -119,9 +119,9 @@
 
       <h2 id="faq">FAQ</h2>
       <div class="faq">
-        <details open><summary>Will Claude have the full ChatGPT conversation?</summary><p>Yes — the handoff packages the whole thread (messages and code) into the prompt that opens in Claude, so it continues with the full context rather than starting blank.</p></details>
+        <details open><summary>Will Claude have the full ChatGPT conversation?</summary><p>Yes — the transfer packages the captured thread (messages and code) into the prompt you paste into Claude, so it continues with that context rather than starting blank. If a long chat hides part of itself from the capture, Continue AI flags it rather than dropping it silently.</p></details>
         <details><summary>Can I go the other direction, Claude → ChatGPT?</summary><p>Yes. Continue AI captures on ChatGPT, Claude, and Gemini and hands off to any of them, in either direction.</p></details>
-        <details><summary>Does it work if the ChatGPT chat is really long?</summary><p>Yes — it's built to grab the full thread even on long, virtualized chats where the page only keeps part of the conversation on screen at once.</p></details>
+        <details><summary>Does it work if the ChatGPT chat is really long?</summary><p>Yes — it's built to grab the full thread even on long, virtualized chats where the page only keeps part of the conversation on screen at once, and it flags the capture if it can't reach everything, so nothing goes missing silently.</p></details>
       </div>
 
       <div class="author">
@@ -153,10 +153,10 @@
         <a href="/#features">Features</a>
         <a href="/blog/">Blog</a>
         <a href="/privacy">Privacy</a>
-        <a href="mailto:boxai5115@gmail.com">boxai5115@gmail.com</a>
+        <a href="mailto:boxai5115@gmail.com?subject=Question%20about%20Continue%20AI">Contact</a>
       </nav>
     </div>
-    <p class="foot-copy">© 2026 Continue AI. Local-first · no account · your conversations never leave your device.</p>
+    <p class="foot-copy">© 2026 Continue AI. Local-first · no account · your conversations stay on your device unless you transfer one.</p>
   </footer>
 </body>
 </html>

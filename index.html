@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Continue AI — Move any AI chat to ChatGPT, Claude, or Gemini in one click</title>
-  <meta name="description" content="Free Chrome extension to continue any AI conversation on another model. Move the whole chat to ChatGPT, Claude, or Gemini without losing context — local-first, no account, your conversations never leave your device.">
+  <meta name="description" content="Free Chrome extension to continue any AI conversation on another model. Move the whole chat to ChatGPT, Claude, or Gemini without losing context — local-first, no account; your conversations stay on your device unless you choose to transfer one.">
   <meta name="keywords" content="transfer AI chat, continue AI conversation, switch AI without losing context, move chatgpt conversation to claude, ai chat transfer extension, hit context limit, chatgpt claude gemini handoff, export ai chat pdf">
   <link rel="canonical" href="https://continue-ai.netlify.app/">
   <!-- Open Graph -->
@@ -35,7 +35,7 @@
     "mainEntity": [
       {"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Continue AI is completely free, with no account and no paywall. Every shipped feature is unlocked."}},
       {"@type":"Question","name":"Do you read or store my conversations?","acceptedAnswer":{"@type":"Answer","text":"No. Capturing and packaging a conversation happens entirely on your device. There are no servers of ours, nothing is transmitted to us, and there is no account or telemetry. A conversation only goes to another AI when you choose to transfer it — and then it goes to that AI, not to us."}},
-      {"@type":"Question","name":"Which AI tools does it work with?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT, Claude, and Gemini. You can capture on any of the three and hand the conversation off to any of the three."}},
+      {"@type":"Question","name":"Which AI tools does it work with?","acceptedAnswer":{"@type":"Answer","text":"You capture on ChatGPT, Claude, or Gemini, and continue on any of eight — those three plus DeepSeek, Perplexity, Copilot, Grok, and Google AI Studio."}},
       {"@type":"Question","name":"Where is my data, and what if I uninstall?","acceptedAnswer":{"@type":"Answer","text":"Everything stays in your browser's local storage on your own machine. You can export any conversation as PDF, HTML, an image, Markdown, or JSON at any time. Uninstalling removes the extension's local data."}},
       {"@type":"Question","name":"Does it work on really long chats?","acceptedAnswer":{"@type":"Answer","text":"Yes. Capture grabs the full thread — it handles long, virtualized conversations where the page only keeps part of the chat in view, so messages aren't silently dropped."}}
     ]
@@ -82,7 +82,7 @@
           <a class="btn primary lg" href="https://chromewebstore.google.com/detail/continue-ai-%E2%80%94-move-your-a/cojmibmimpeakmgllhpolgbjienedfkf" target="_blank" rel="noopener" data-cws>Add to Chrome — Free</a>
           <a class="btn ghost lg" href="#try">See it work →</a>
         </div>
-        <p class="microcopy">Free · works across ChatGPT, Claude &amp; Gemini · your conversations never leave your device · no account</p>
+        <p class="microcopy">Free · works across ChatGPT, Claude &amp; Gemini · nothing leaves your device unless you hand a chat off · no account</p>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="mock" id="heroMock">
@@ -96,9 +96,9 @@
             <div class="picker" id="heroPicker">
               <div class="picker-head">TRANSFER TO <span class="pk-key">1-CLICK</span></div>
               <div class="picker-search"><span id="heroQuery" class="ph">Choose where to continue…</span></div>
-              <div class="picker-row sel"><b>Claude</b><small>Continue with the whole thread carried over</small></div>
-              <div class="picker-row"><b>ChatGPT</b><small>Pick up exactly where you left off</small></div>
-              <div class="picker-row"><b>Gemini</b><small>Hand the conversation across, in context</small></div>
+              <div class="picker-row sel"><b>Claude</b><small>Copies the whole thread, ready to paste</small></div>
+              <div class="picker-row"><b>ChatGPT</b><small>Carries your context — paste and continue</small></div>
+              <div class="picker-row"><b>Gemini</b><small>Hands it across; you paste it in</small></div>
               <div class="picker-foot"><span>↑↓ choose</span><span>↵ hand off</span></div>
             </div>
           </div>
@@ -136,7 +136,7 @@
     <!-- TRY IT (live, in-page) -->
     <section id="try" class="section try-section">
       <h2>Try it right here — no install</h2>
-      <p class="section-sub">Here's a chat that's run long. Pick where to continue and hit <kbd>Transfer</kbd> — watch it capture the thread, package it into a portable prompt, and hand it off, exactly like the extension does.</p>
+      <p class="section-sub">Here's a chat that's run long. Pick where to continue and hit <kbd>Transfer</kbd> — watch it capture the thread, package it into a portable prompt, and copy it, ready to paste into the other AI, exactly like the extension does.</p>
       <div class="try-wrap" id="transferDemo">
         <div class="try-source" id="tdSource">
           <div class="tc-bar"><span class="dots"><i></i><i></i><i></i></span><span class="tc-title" id="tdSourceName">ChatGPT</span><span class="tc-hint">running long…</span></div>
@@ -155,8 +155,8 @@
         </div>
         <div class="try-compose" id="tdDest">
           <div class="tc-bar"><span class="dots"><i></i><i></i><i></i></span><span class="tc-title" id="tdDestName">Claude</span><span class="tc-hint" id="tdDestHint">new chat</span></div>
-          <div class="tc-body" id="tdBody" aria-live="polite" data-ph="The portable prompt lands here…"></div>
-          <div class="tc-actions"><span class="tc-step" id="tdStep">Waiting for a handoff…</span></div>
+          <div class="tc-body" id="tdBody" aria-live="polite" data-ph="Your portable prompt appears here — ready to copy…"></div>
+          <div class="tc-actions"><span class="tc-step" id="tdStep">Ready when you are</span></div>
         </div>
       </div>
     </section>
@@ -182,7 +182,7 @@
           <div class="rule"><i></i><b class="node"></b></div>
           <div class="lrow-grid">
             <div class="lnum" data-n="1">01</div>
-            <div class="lmain"><h3 class="lhead">One-click transfer</h3><p class="ldeck">Captures the chat and hands it to another AI — packaged into a portable prompt and auto-pasted on arrival. No copy-paste marathon.</p></div>
+            <div class="lmain"><h3 class="lhead">One-click transfer</h3><p class="ldeck">Captures the chat and packages it into a clean, portable prompt — then copies it to your clipboard. Paste it into the other AI and pick up where you left off, no manual copy-paste-and-reconstruct.</p></div>
             <div class="ldiag" aria-hidden="true">
               <div class="dgrp"><code class="dmono">ChatGPT</code><span class="darrow">→</span><code class="dmono">Claude</code></div>
               <div class="dlines"><i></i><i></i><i></i></div>
@@ -195,7 +195,7 @@
           <div class="rule"><i></i><b class="node"></b></div>
           <div class="lrow-grid">
             <div class="lnum" data-n="2">02</div>
-            <div class="lmain"><h3 class="lhead">Reliable capture</h3><p class="ldeck">Grabs the full thread — even long, virtualized chats where the page only keeps part of the conversation on screen. Nothing dropped.</p></div>
+            <div class="lmain"><h3 class="lhead">Reliable capture</h3><p class="ldeck">Grabs the full thread — even long, virtualized chats where the page only keeps part of the conversation on screen. And if a capture can't grab everything, it flags it, so messages are never dropped silently.</p></div>
             <div class="ldiag" aria-hidden="true">
               <div class="dmarquee"><i></i><i></i><i></i><span class="dtag">FULL ✓</span></div>
               <span class="lcap">FULL THREAD</span>
@@ -231,10 +231,10 @@
           <div class="rule"><i></i><b class="node"></b></div>
           <div class="lrow-grid">
             <div class="lnum" data-n="5">05</div>
-            <div class="lmain"><h3 class="lhead">Works everywhere you chat</h3><p class="ldeck">ChatGPT, Claude, and Gemini — capture on any of them, continue on any of them.</p></div>
+            <div class="lmain"><h3 class="lhead">Works everywhere you chat</h3><p class="ldeck">Capture on ChatGPT, Claude, or Gemini — and continue on any of eight, including DeepSeek, Perplexity, Copilot, Grok, and Google AI Studio.</p></div>
             <div class="ldiag" aria-hidden="true">
               <div class="dvars">ChatGPT · Claude · Gemini</div>
-              <span class="lcap">3 PLATFORMS</span>
+              <span class="lcap">3 IN · 8 OUT</span>
             </div>
           </div>
         </div>
@@ -276,7 +276,7 @@
       <div class="faq">
         <details><summary>Is it free?</summary><p>Yes — Continue AI is completely free, with no account and no paywall. Every shipped feature is unlocked.</p></details>
         <details><summary>Do you read or store my conversations?</summary><p>No. Capturing and packaging a conversation happens entirely on your device. There are no servers of ours, nothing is transmitted to us, and there's no account or telemetry. A conversation only goes to another AI when <em>you</em> choose to transfer it — and then it goes to that AI, not to us.</p></details>
-        <details><summary>Which AI tools does it work with?</summary><p>ChatGPT, Claude, and Gemini. You can capture on any of the three and hand the conversation off to any of the three.</p></details>
+        <details><summary>Which AI tools does it work with?</summary><p>You capture on ChatGPT, Claude, or Gemini, and continue on any of eight — those three plus DeepSeek, Perplexity, Copilot, Grok, and Google AI Studio.</p></details>
         <details><summary>Where is my data, and what if I uninstall?</summary><p>Everything stays in your browser's local storage, on your own machine. You can export any conversation as PDF, HTML, an image, Markdown, or JSON at any time. Uninstalling removes the extension's local data.</p></details>
         <details><summary>Does it work on really long chats?</summary><p>Yes. Capture grabs the full thread — it's built to handle long, virtualized conversations where the page only keeps part of the chat in view, so messages aren't silently dropped.</p></details>
       </div>
@@ -293,10 +293,10 @@
         <a href="#features">Features</a>
         <a href="/blog/">Blog</a>
         <a href="/privacy">Privacy</a>
-        <a href="mailto:boxai5115@gmail.com">boxai5115@gmail.com</a>
+        <a href="mailto:boxai5115@gmail.com?subject=Question%20about%20Continue%20AI">Contact</a>
       </nav>
     </div>
-    <p class="foot-copy">© 2026 Continue AI. Local-first · no account · your conversations never leave your device.</p>
+    <p class="foot-copy">© 2026 Continue AI. Local-first · no account · your conversations stay on your device unless you transfer one.</p>
   </footer>
 
   <script src="script.js"></script>
