@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Continue an AI Chat on Another Model — Without Losing Context (2026)</title>
+  <meta name="description" content="Switch models mid-conversation without starting over. Capture a whole AI chat and continue it on ChatGPT, Claude, or Gemini in one click — context, code and files intact.">
+  <meta name="keywords" content="continue ai chat, switch ai model, move conversation between ai, chatgpt to claude, ai chat without losing context, transfer ai conversation">
+  <link rel="canonical" href="https://continue-ai.netlify.app/blog/continue-ai-chat-on-another-model">
+  <meta property="og:title" content="How to Continue an AI Chat on Another Model — Without Losing Context">
+  <meta property="og:description" content="Switch models mid-conversation without starting over. Capture the whole chat and continue it on ChatGPT, Claude, or Gemini in one click.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://continue-ai.netlify.app/blog/continue-ai-chat-on-another-model">
+  <meta property="og:image" content="https://continue-ai.netlify.app/og/cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Continue an AI chat on another model — capture the conversation and hand it to ChatGPT, Claude, or Gemini.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://continue-ai.netlify.app/og/cover.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cpath d='M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z' fill='none' stroke='white' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var s=localStorage.getItem('cr-theme');d.setAttribute('data-theme',s||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));}catch(e){d.setAttribute('data-theme','light');}})();</script>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../spec-sheet.css">
+  <link rel="stylesheet" href="../dark.css">
+  <link rel="stylesheet" href="../creative.css">
+  <script src="../theme.js" defer></script>
+  <script src="../analytics.js" defer></script>
+  <script src="../motion.js" defer></script>
+  <script src="../creative.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "Article",
+    "headline": "How to Continue an AI Chat on Another Model — Without Losing Context",
+    "description": "Switch models mid-conversation without starting over. Capture the whole chat and continue it on ChatGPT, Claude, or Gemini in one click.",
+    "author": { "@type": "Person", "name": "Yash Desai" },
+    "publisher": { "@type": "Organization", "name": "Continue AI" },
+    "datePublished": "2026-06-13", "dateModified": "2026-06-13",
+    "mainEntityOfPage": "https://continue-ai.netlify.app/blog/continue-ai-chat-on-another-model"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://continue-ai.netlify.app/"},
+      {"@type":"ListItem","position":2,"name":"Blog","item":"https://continue-ai.netlify.app/blog/"},
+      {"@type":"ListItem","position":3,"name":"Continue an AI chat on another model","item":"https://continue-ai.netlify.app/blog/continue-ai-chat-on-another-model"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Can I switch AI models without losing my conversation?","acceptedAnswer":{"@type":"Answer","text":"Yes. Instead of copy-pasting, you can capture the whole chat and hand it to another model packaged as a portable prompt, so the new model picks up with the full context — the messages, code and files from the original thread."}},
+      {"@type":"Question","name":"Which models can I move a conversation between?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT, Claude, and Gemini. You can capture on any of the three and continue on any of the three."}},
+      {"@type":"Question","name":"Does my conversation get uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Capturing and packaging happen on your device. There are no servers and nothing is transmitted to the extension's authors. The conversation only goes to the AI you choose to continue on, when you choose to transfer it."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="/">
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2563eb"/><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span>Continue AI</span>
+    </a>
+    <nav class="navlinks">
+      <a href="/#features">Features</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#faq">FAQ</a>
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/continue-ai-%E2%80%94-move-your-a/cojmibmimpeakmgllhpolgbjienedfkf" target="_blank" rel="noopener" data-cws>Add to Chrome</a>
+    </nav>
+  </header>
+
+  <article class="article">
+    <nav class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Continue a chat on another model</nav>
+
+    <header class="article-head">
+      <div class="article-meta"><span class="post-tag">How-to</span><span>Updated June 2026</span><span>·</span><span>8 min read</span></div>
+      <h1>How to Continue an AI Chat on Another Model — Without Losing Context</h1>
+      <p class="article-lead">You're deep in a conversation with one AI and you want a second opinion, a roomier context window, or just a different model's strengths. The instinct is to copy-paste the whole thread into the new chat — and that's exactly where the context goes to die. Here's the faster, cleaner way to <strong>continue the conversation on another model</strong> with the thread intact.</p>
+    </header>
+
+    <div class="tldr2">
+      <p class="tl-k">The short version</p>
+      <ul>
+        <li>Copy-pasting a long chat loses formatting, code blocks, and usually half the thread.</li>
+        <li>Instead, <strong>capture the whole conversation</strong> and hand it to ChatGPT, Claude, or Gemini as a portable prompt — in one click.</li>
+        <li>The new model starts with the full context, so you continue instead of re-explaining.</li>
+        <li>It all happens on your device — no account, no servers, nothing transmitted.</li>
+      </ul>
+    </div>
+
+    <div class="article-body">
+      <h2 id="why">Why you'd switch models mid-conversation</h2>
+      <p>No single model wins at everything, and you usually only discover the mismatch halfway through a chat. Common reasons people move a conversation:</p>
+      <ul>
+        <li><strong>A second opinion.</strong> You've got a plan from one model and want another to pressure-test it.</li>
+        <li><strong>The chat hit a wall.</strong> Long conversations slow down, start "forgetting" earlier messages, or refuse to continue. (More on that in <a href="/blog/avoid-ai-context-limit">rescuing a long chat</a>.)</li>
+        <li><strong>Different strengths.</strong> One model is better at code, another at long-document reasoning, another at quick drafts.</li>
+        <li><strong>Availability.</strong> One service is down, rate-limited, or you've used up a quota.</li>
+      </ul>
+
+      <h2 id="copy-paste">The problem with copy-paste</h2>
+      <p>Manually moving a conversation is worse than it looks. You select dozens of messages, paste them into the new model, and immediately lose the structure: who said what blurs together, code blocks flatten into plain text, and long threads get truncated because selecting them all is a chore. Then you spend the first few messages re-establishing context the model can't see. It's slow, lossy, and error-prone — exactly the busywork you switched models to avoid.</p>
+
+      <blockquote class="pullquote">The point of switching models is to keep thinking — not to spend ten minutes re-typing what you already said. <span>Carry the thread, not just the last message.</span></blockquote>
+
+      <h2 id="one-click">The one-click way: capture → package → hand off</h2>
+      <p>Continue AI does the move for you in three steps, all on your machine:</p>
+      <ul>
+        <li><strong>Capture.</strong> It reads the conversation that's open — every user and assistant turn, including code — straight from the page.</li>
+        <li><strong>Package.</strong> It builds a single portable prompt that carries the thread as context, with a clear instruction to pick up where you left off.</li>
+        <li><strong>Hand off.</strong> It opens your chosen model — ChatGPT, Claude, or Gemini — and drops the prompt in, ready to send.</li>
+      </ul>
+      <p>You go from "I wish I could ask a different model" to actually asking it, with the full conversation behind it, in a click.</p>
+
+      <div class="callout tip">
+        <span class="ci">✅</span>
+        <p>Want to see it before you install anything? The <a href="/#try">live demo on the homepage</a> runs the whole capture → package → hand-off sequence on a sample chat, right in your browser.</p>
+      </div>
+
+      <h2 id="context">What "without losing context" actually means</h2>
+      <p>"Context" isn't just your last question — it's the whole arc: the constraints you set early, the code that evolved, the decisions you made together. Continue AI carries that arc into the new chat, so the receiving model isn't guessing. The transfer is plain text you can read before you send it, so nothing happens behind your back.</p>
+
+      <h2 id="long-chats">It works on long, messy chats too</h2>
+      <p>The hardest conversations to move by hand are the long ones — and those are exactly the ones where switching models helps most. Modern chat apps only keep part of a long thread on screen at a time (they "virtualize" it), which is why a manual copy so often misses messages. Continue AI is built to grab the <strong>full thread</strong> even on these long, virtualized chats, so the handoff isn't silently missing the middle.</p>
+
+      <h2 id="save">Or just keep a copy</h2>
+      <p>Sometimes you don't want to move the chat — you want to keep it. Continue AI can export any conversation as a <code>PDF</code>, an <code>HTML</code> page, an image, <code>Markdown</code>, or <code>JSON</code>, so you can archive a good session, share it, or drop it into your notes.</p>
+
+      <h2 id="privacy">Where your conversation goes</h2>
+      <p>Capturing, packaging, and exporting all happen locally. There are no servers of ours and nothing is transmitted to us — no account, no telemetry. The one time content leaves your device is the transfer <em>you</em> trigger, and then it goes to the model you picked (under its own privacy policy), never through us. See the <a href="/privacy">privacy policy</a> for the details.</p>
+
+      <div class="cta-box">
+        <h3>Continue any chat on another model</h3>
+        <p>Capture the thread, pick a model, hand it off — in one click. Free, local-first, no account.</p>
+        <a class="btn lg" href="https://chromewebstore.google.com/detail/continue-ai-%E2%80%94-move-your-a/cojmibmimpeakmgllhpolgbjienedfkf" target="_blank" rel="noopener" data-cws>Add to Chrome — Free</a>
+      </div>
+
+      <h2 id="faq">FAQ</h2>
+      <div class="faq">
+        <details open><summary>Can I switch AI models without losing my conversation?</summary><p>Yes. Instead of copy-pasting, you capture the whole chat and hand it to another model as a portable prompt, so the new model picks up with the full context — the messages, code and files from the original thread.</p></details>
+        <details><summary>Which models can I move a conversation between?</summary><p>ChatGPT, Claude, and Gemini. You can capture on any of the three and continue on any of the three.</p></details>
+        <details><summary>Does my conversation get uploaded to a server?</summary><p>No. Capturing and packaging happen on your device. There are no servers and nothing is transmitted to us. The conversation only goes to the AI you choose, when you choose to transfer it.</p></details>
+      </div>
+
+      <div class="author">
+        <div class="ava">YD</div>
+        <div>
+          <div class="aname">Yash Desai</div>
+          <div class="arole">I build local-first tools for people who live in AI chats.</div>
+        </div>
+      </div>
+      <div class="colophon-end">— END OF FILE · CONTINUE AI · VOL.01 —</div>
+    </div>
+  </article>
+
+  <section class="related">
+    <h2>Keep reading</h2>
+    <div class="related-list">
+      <a href="/blog/move-chatgpt-conversation-to-claude"><div class="rt">How to Move a ChatGPT Conversation to Claude</div><div class="rp">Carry a whole thread from ChatGPT into Claude — code and context included.</div></a>
+      <a href="/blog/avoid-ai-context-limit"><div class="rt">Hitting the Context Limit? How to Rescue a Long AI Chat</div><div class="rp">Spot the signs a chat is running out of room, and move it before it stalls.</div></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2563eb"/><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Continue AI
+      </div>
+      <nav class="foot-links">
+        <a href="/#features">Features</a>
+        <a href="/blog/">Blog</a>
+        <a href="/privacy">Privacy</a>
+        <a href="mailto:boxai5115@gmail.com">boxai5115@gmail.com</a>
+      </nav>
+    </div>
+    <p class="foot-copy">© 2026 Continue AI. Local-first · no account · your conversations never leave your device.</p>
+  </footer>
+</body>
+</html>

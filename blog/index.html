@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Continue AI: moving conversations across ChatGPT, Claude &amp; Gemini</title>
+  <meta name="description" content="Guides on continuing an AI conversation on another model: moving chats across ChatGPT, Claude, and Gemini, avoiding context limits, and keeping the full thread when you switch.">
+  <meta name="keywords" content="continue ai chat, transfer ai conversation, chatgpt to claude, ai context limit, switch ai model">
+  <link rel="canonical" href="https://continue-ai.netlify.app/blog/">
+  <meta property="og:title" content="Blog — Continue AI">
+  <meta property="og:description" content="Guides on continuing an AI conversation on another model, avoiding context limits, and keeping the full thread when you switch.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://continue-ai.netlify.app/blog/">
+  <meta property="og:image" content="https://continue-ai.netlify.app/og/cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Continue AI blog — guides on moving AI conversations across ChatGPT, Claude, and Gemini.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://continue-ai.netlify.app/og/cover.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cpath d='M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z' fill='none' stroke='white' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var s=localStorage.getItem('cr-theme');d.setAttribute('data-theme',s||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));}catch(e){d.setAttribute('data-theme','light');}})();</script>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../spec-sheet.css">
+  <link rel="stylesheet" href="../dark.css">
+  <link rel="stylesheet" href="../creative.css">
+  <script src="../theme.js" defer></script>
+  <script src="../analytics.js" defer></script>
+  <script src="../motion.js" defer></script>
+  <script src="../creative.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Continue AI Blog",
+    "description": "Guides on continuing an AI conversation on another model — moving chats across ChatGPT, Claude, and Gemini.",
+    "url": "https://continue-ai.netlify.app/blog/"
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="/">
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2563eb"/><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span>Continue AI</span>
+    </a>
+    <nav class="navlinks">
+      <a href="/#features">Features</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#faq">FAQ</a>
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/continue-ai-%E2%80%94-move-your-a/cojmibmimpeakmgllhpolgbjienedfkf" target="_blank" rel="noopener" data-cws>Add to Chrome</a>
+    </nav>
+  </header>
+
+  <div class="blog-head">
+    <span class="eyebrow"><span class="dot"></span> The Continue AI blog</span>
+    <h1>Never lose <span class="grad">a thread</span></h1>
+    <p>Practical guides on continuing an AI conversation on another model — moving chats across ChatGPT, Claude, and Gemini, dodging context limits, and keeping the full thread when you switch.</p>
+  </div>
+
+  <!-- field-notes running header -->
+  <div class="cr-ticker" aria-label="Field notes">
+    <div class="cr-tk-track" aria-hidden="true">
+      <div class="cr-tk-seg">
+        <span>LOCAL-FIRST</span>
+        <span>ONE-CLICK HANDOFF</span>
+        <span>NO ACCOUNT</span>
+        <span><b>0 SERVERS</b></span>
+        <span>CHATGPT &middot; CLAUDE &middot; GEMINI</span>
+        <span>NOTHING TRANSMITTED</span>
+      </div>
+      <div class="cr-tk-seg">
+        <span>LOCAL-FIRST</span>
+        <span>ONE-CLICK HANDOFF</span>
+        <span>NO ACCOUNT</span>
+        <span><b>0 SERVERS</b></span>
+        <span>CHATGPT &middot; CLAUDE &middot; GEMINI</span>
+        <span>NOTHING TRANSMITTED</span>
+      </div>
+    </div>
+    <div class="cr-tk-static"><span class="s">&#10042;</span> LOCAL-FIRST &middot; ONE-CLICK HANDOFF &middot; NO ACCOUNT &middot; 0 SERVERS</div>
+  </div>
+
+  <main class="toc">
+    <div class="toc-masthead">
+      <span>FIELD NOTES</span>
+      <span class="colophon">VOL.01 · CONTINUE AI · UPD JUN 2026 · 3 ENTRIES</span>
+    </div>
+
+    <!-- FEATURED / flagship — editorial lead, not a card -->
+    <a class="toc-lead" href="/blog/continue-ai-chat-on-another-model">
+      <div class="rule"><i></i><b class="node"></b></div>
+      <div class="lead-grid">
+        <div class="lead-main">
+          <div class="lead-meta">No.01 · HOW-TO · 8 MIN · 2026</div>
+          <h2 class="lead-title">How to Continue an AI Chat on Another Model — Without Losing Context</h2>
+          <p class="lead-deck">Copy-pasting a long conversation into a new model loses formatting, code, and half the thread. Here's a faster way: capture the whole chat and hand it to ChatGPT, Claude, or Gemini in one click, with the context intact.</p>
+          <span class="lead-read">Read the guide →</span>
+        </div>
+        <div class="lead-plate" aria-hidden="true"><span class="plate-num">01</span><span class="plate-stamp">HOW-TO</span></div>
+      </div>
+    </a>
+
+    <!-- contents list -->
+    <div class="toc-list" role="list">
+      <a class="tocrow" href="/blog/move-chatgpt-conversation-to-claude" role="listitem" data-read="7">
+        <div class="rule"><i></i><b class="node"></b></div>
+        <div class="tocrow-grid">
+          <span class="tocnum">02</span>
+          <span class="toccat">HOW-TO</span>
+          <div class="tocmain"><h3 class="toctitle">How to Move a ChatGPT Conversation to Claude</h3><p class="tocdek">Want Claude's take on a thread you started in ChatGPT? Carry the whole conversation over — code, context and all — instead of starting from scratch.</p></div>
+          <span class="tocstatus read">→ READ</span>
+        </div>
+      </a>
+
+      <a class="tocrow" href="/blog/avoid-ai-context-limit" role="listitem" data-read="8">
+        <div class="rule"><i></i><b class="node"></b></div>
+        <div class="tocrow-grid">
+          <span class="tocnum">03</span>
+          <span class="toccat">GUIDE</span>
+          <div class="tocmain"><h3 class="toctitle">Hitting the Context Limit? How to Rescue a Long AI Chat</h3><p class="tocdek">Why long chats slow down, start "forgetting", or refuse to continue — and how to move the conversation somewhere with room before it stalls.</p></div>
+          <span class="tocstatus read">→ READ</span>
+        </div>
+      </a>
+
+      <!-- ════════════════════════════════════════════════════════════════
+           DRAFTS / UNPUBLISHED POSTS — keep them here, COMMENTED OUT, so they
+           never render, never get crawled, and never 404. There is no build
+           step, so this comment IS the publish/draft flag. Rules:
+             1. A post is PUBLISHED only when its <a class="tocrow"> is moved
+                OUT of this comment AND its article file + sitemap.xml entry
+                both exist. Never ship a live row to a page that doesn't exist.
+             2. Need a draft visible to teammates but hidden from the public?
+                Add the row live with data-status="draft" — spec-sheet.css
+                hides any [data-status="draft"] entry (CSS safety net).
+           Copy this example row out of the comment when the post goes live:
+
+      <a class="tocrow" href="SLUG.html" role="listitem" data-read="N">
+        <div class="rule"><i></i><b class="node"></b></div>
+        <div class="tocrow-grid">
+          <span class="tocnum">04</span>
+          <span class="toccat">CATEGORY</span>
+          <div class="tocmain"><h3 class="toctitle">Post title</h3><p class="tocdek">One-line description.</p></div>
+          <span class="tocstatus read">→ READ</span>
+        </div>
+      </a>
+           ════════════════════════════════════════════════════════════════ -->
+
+      <div class="rule last"><i></i><b class="node"></b></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2563eb"/><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Continue AI
+      </div>
+      <nav class="foot-links">
+        <a href="/#features">Features</a>
+        <a href="/blog/">Blog</a>
+        <a href="/privacy">Privacy</a>
+        <a href="mailto:boxai5115@gmail.com">boxai5115@gmail.com</a>
+      </nav>
+    </div>
+    <p class="foot-copy">© 2026 Continue AI. Local-first · no account · your conversations never leave your device.</p>
+  </footer>
+</body>
+</html>

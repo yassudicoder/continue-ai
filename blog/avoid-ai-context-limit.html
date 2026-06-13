@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hitting the Context Limit? How to Rescue a Long AI Chat (2026)</title>
+  <meta name="description" content="Why long AI chats slow down, start forgetting, or refuse to continue — and how to move the conversation somewhere with room before it stalls, without losing the thread.">
+  <meta name="keywords" content="ai context limit, chatgpt context window full, ai chat forgetting, long ai conversation, claude conversation too long, rescue ai chat">
+  <link rel="canonical" href="https://continue-ai.netlify.app/blog/avoid-ai-context-limit">
+  <meta property="og:title" content="Hitting the Context Limit? How to Rescue a Long AI Chat">
+  <meta property="og:description" content="Why long chats slow down, forget, or refuse to continue — and how to move the conversation somewhere with room before it stalls.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://continue-ai.netlify.app/blog/avoid-ai-context-limit">
+  <meta property="og:image" content="https://continue-ai.netlify.app/og/cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rescue a long AI chat before it hits the context limit by moving it to a fresh model.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://continue-ai.netlify.app/og/cover.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cpath d='M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z' fill='none' stroke='white' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var s=localStorage.getItem('cr-theme');d.setAttribute('data-theme',s||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));}catch(e){d.setAttribute('data-theme','light');}})();</script>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../spec-sheet.css">
+  <link rel="stylesheet" href="../dark.css">
+  <link rel="stylesheet" href="../creative.css">
+  <script src="../theme.js" defer></script>
+  <script src="../analytics.js" defer></script>
+  <script src="../motion.js" defer></script>
+  <script src="../creative.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "Article",
+    "headline": "Hitting the Context Limit? How to Rescue a Long AI Chat",
+    "description": "Why long AI chats slow down, forget, or refuse to continue — and how to move them somewhere with room before they stall.",
+    "author": { "@type": "Person", "name": "Yash Desai" },
+    "publisher": { "@type": "Organization", "name": "Continue AI" },
+    "datePublished": "2026-06-13", "dateModified": "2026-06-13",
+    "mainEntityOfPage": "https://continue-ai.netlify.app/blog/avoid-ai-context-limit"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://continue-ai.netlify.app/"},
+      {"@type":"ListItem","position":2,"name":"Blog","item":"https://continue-ai.netlify.app/blog/"},
+      {"@type":"ListItem","position":3,"name":"Rescue a long AI chat","item":"https://continue-ai.netlify.app/blog/avoid-ai-context-limit"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="/">
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2563eb"/><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span>Continue AI</span>
+    </a>
+    <nav class="navlinks">
+      <a href="/#features">Features</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#faq">FAQ</a>
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/continue-ai-%E2%80%94-move-your-a/cojmibmimpeakmgllhpolgbjienedfkf" target="_blank" rel="noopener" data-cws>Add to Chrome</a>
+    </nav>
+  </header>
+
+  <article class="article">
+    <nav class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Rescue a long chat</nav>
+
+    <header class="article-head">
+      <div class="article-meta"><span class="post-tag">Guide</span><span>Updated June 2026</span><span>·</span><span>8 min read</span></div>
+      <h1>Hitting the Context Limit? How to Rescue a Long AI Chat</h1>
+      <p class="article-lead">Every long AI conversation eventually gets sluggish, starts forgetting what you said an hour ago, or simply refuses to continue. That's the <strong>context limit</strong> showing up. Here's what's actually happening — and how to move the conversation somewhere with room before it stalls, without abandoning the thread.</p>
+    </header>
+
+    <div class="tldr2">
+      <p class="tl-k">The short version</p>
+      <ul>
+        <li>Models can only "see" a fixed amount of conversation at once — the context window.</li>
+        <li>As a chat grows, the oldest turns fall out of view: the model starts forgetting, drifting, or stalling.</li>
+        <li>The fix is to <strong>continue the conversation in a fresh chat</strong> — ideally on a model with a roomy window — carrying the important context with you.</li>
+        <li>Continue AI captures the thread and hands it to a fresh ChatGPT, Claude, or Gemini chat in one click, so you don't start over.</li>
+      </ul>
+    </div>
+
+    <div class="article-body">
+      <h2 id="what">What the context limit is</h2>
+      <p>An AI model reads your whole conversation every time it replies, but only up to a fixed size — its <strong>context window</strong>. Once the chat plus its answer would exceed that window, something has to give: the app trims or summarizes the oldest messages so the newest ones still fit. The model isn't broken; it just can't see the beginning of the thread anymore.</p>
+
+      <h2 id="signs">The signs you're hitting it</h2>
+      <ul>
+        <li><strong>It forgets.</strong> Constraints you set early — a name, a format, a rule — quietly stop being honored.</li>
+        <li><strong>It drifts.</strong> Answers get more generic, as if it's lost the specifics of your project.</li>
+        <li><strong>It slows down.</strong> Very long threads get noticeably laggy to load and respond.</li>
+        <li><strong>It refuses.</strong> Some apps surface an explicit "this conversation is too long" message and stop letting you continue.</li>
+      </ul>
+
+      <blockquote class="pullquote">A long chat doesn't fail all at once — it fades. By the time it "forgets," you've usually already lost a few answers to drift. <span>Move it before it stalls, not after.</span></blockquote>
+
+      <h2 id="why-not">Why "just start a new chat" isn't enough</h2>
+      <p>A fresh chat fixes the window, but a blank one throws away everything you built. So people copy-paste the old thread in — and run straight into the other problem: long conversations are only partly rendered on screen at a time, so a manual copy usually misses messages, and the formatting and code don't survive the trip. You end up with a new chat that's <em>almost</em> caught up, which is its own kind of frustrating.</p>
+
+      <h2 id="rescue">How to rescue the conversation</h2>
+      <p>The move you actually want is: take the meaningful context from the stalling chat and continue it in a fresh one, cleanly. Continue AI does this in a click — it captures the <strong>full thread</strong> (built for long, virtualized chats where the page only keeps part of the conversation loaded), packages it into a portable prompt, and opens a new chat on the model you choose with that context already in place.</p>
+      <ul>
+        <li><strong>Same model, fresh window.</strong> Continue in a new chat of the same app to reset the window while keeping the thread.</li>
+        <li><strong>A roomier model.</strong> Hand the conversation to a model with a larger context window when you know the discussion still has a long way to go.</li>
+      </ul>
+
+      <div class="callout tip">
+        <span class="ci">✅</span>
+        <p>Don't wait for the wall. The moment a chat starts feeling forgetful is the right time to move it — that's when the context is still intact enough to carry over cleanly.</p>
+      </div>
+
+      <h2 id="keep">Keep a copy before it's gone</h2>
+      <p>If a conversation matters, save it. Continue AI can export any chat as a <code>PDF</code>, <code>HTML</code>, image, <code>Markdown</code>, or <code>JSON</code> file, so a long, hard-won session isn't trapped in an app that's about to truncate it.</p>
+
+      <h2 id="privacy">Done on your device</h2>
+      <p>Capturing, packaging, and exporting happen locally — no servers of ours, nothing transmitted to us, no account. When you continue elsewhere, the conversation goes only to the model you picked.</p>
+
+      <div class="cta-box">
+        <h3>Move a long chat before it stalls</h3>
+        <p>Capture the full thread and continue it in a fresh chat — same model or a roomier one. Free, local-first, no account.</p>
+        <a class="btn lg" href="https://chromewebstore.google.com/detail/continue-ai-%E2%80%94-move-your-a/cojmibmimpeakmgllhpolgbjienedfkf" target="_blank" rel="noopener" data-cws>Add to Chrome — Free</a>
+      </div>
+
+      <h2 id="faq">FAQ</h2>
+      <div class="faq">
+        <details open><summary>Why does my AI chat start forgetting things?</summary><p>Because the conversation has grown past the model's context window. To fit your newest messages, the app trims or summarizes the oldest ones — so earlier details stop influencing the answers.</p></details>
+        <details><summary>Can I keep the conversation when I start a fresh chat?</summary><p>Yes — instead of copy-pasting, capture the thread and hand it to a new chat as a portable prompt, so the fresh chat continues with the context instead of a blank slate.</p></details>
+        <details><summary>Does it capture everything in a very long chat?</summary><p>It's built to grab the full thread even on long, virtualized conversations where the page only keeps part of the chat on screen, so the rescue isn't silently missing the middle.</p></details>
+      </div>
+
+      <div class="author">
+        <div class="ava">YD</div>
+        <div>
+          <div class="aname">Yash Desai</div>
+          <div class="arole">I build local-first tools for people who live in AI chats.</div>
+        </div>
+      </div>
+      <div class="colophon-end">— END OF FILE · CONTINUE AI · VOL.01 —</div>
+    </div>
+  </article>
+
+  <section class="related">
+    <h2>Keep reading</h2>
+    <div class="related-list">
+      <a href="/blog/continue-ai-chat-on-another-model"><div class="rt">How to Continue an AI Chat on Another Model</div><div class="rp">The general playbook for switching models without losing the thread.</div></a>
+      <a href="/blog/move-chatgpt-conversation-to-claude"><div class="rt">How to Move a ChatGPT Conversation to Claude</div><div class="rp">Carry a whole thread from ChatGPT into Claude — code and context included.</div></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2563eb"/><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Continue AI
+      </div>
+      <nav class="foot-links">
+        <a href="/#features">Features</a>
+        <a href="/blog/">Blog</a>
+        <a href="/privacy">Privacy</a>
+        <a href="mailto:boxai5115@gmail.com">boxai5115@gmail.com</a>
+      </nav>
+    </div>
+    <p class="foot-copy">© 2026 Continue AI. Local-first · no account · your conversations never leave your device.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Force .html URLs to their clean, canonical paths (301).
+# Netlify already serves each foo.html at /foo; these redirect the .html form
+# so there's a single canonical URL and no duplicate-content split.
+/index.html                                            /                                              301!
+/privacy.html                                          /privacy                                       301!
+/blog/index.html                                       /blog/                                         301!
+/blog/continue-ai-chat-on-another-model.html           /blog/continue-ai-chat-on-another-model        301!
+/blog/move-chatgpt-conversation-to-claude.html         /blog/move-chatgpt-conversation-to-claude      301!
+/blog/avoid-ai-context-limit.html                      /blog/avoid-ai-context-limit                   301!

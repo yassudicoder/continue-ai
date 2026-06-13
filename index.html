@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Continue AI — Move any AI chat to ChatGPT, Claude, or Gemini in one click</title>
+  <meta name="description" content="Free Chrome extension to continue any AI conversation on another model. Move the whole chat to ChatGPT, Claude, or Gemini without losing context — local-first, no account, your conversations never leave your device.">
+  <meta name="keywords" content="transfer AI chat, continue AI conversation, switch AI without losing context, move chatgpt conversation to claude, ai chat transfer extension, hit context limit, chatgpt claude gemini handoff, export ai chat pdf">
+  <link rel="canonical" href="https://continue-ai.netlify.app/">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Continue AI — continue any AI chat on another model, in one click">
+  <meta property="og:description" content="Hit a limit or want a second opinion? Move the whole conversation to ChatGPT, Claude, or Gemini without losing context. Local-first, no account.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://continue-ai.netlify.app/">
+  <meta property="og:image" content="https://continue-ai.netlify.app/og/cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Continue AI — move a whole AI conversation to ChatGPT, Claude, or Gemini in one click, without losing context.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://continue-ai.netlify.app/og/cover.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cpath d='M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z' fill='none' stroke='white' stroke-width='1.6' stroke-linejoin='round'/%3E%3Cpath d='M9.5 10.2h5M9.5 12.2h3' stroke='white' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var s=localStorage.getItem('cr-theme');d.setAttribute('data-theme',s||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));}catch(e){d.setAttribute('data-theme','light');}})();</script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="spec-sheet.css">
+  <link rel="stylesheet" href="dark.css">
+  <link rel="stylesheet" href="creative.css">
+  <script src="theme.js" defer></script>
+  <script src="analytics.js" defer></script>
+  <script src="motion.js" defer></script>
+  <script src="creative.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Continue AI is completely free, with no account and no paywall. Every shipped feature is unlocked."}},
+      {"@type":"Question","name":"Do you read or store my conversations?","acceptedAnswer":{"@type":"Answer","text":"No. Capturing and packaging a conversation happens entirely on your device. There are no servers of ours, nothing is transmitted to us, and there is no account or telemetry. A conversation only goes to another AI when you choose to transfer it — and then it goes to that AI, not to us."}},
+      {"@type":"Question","name":"Which AI tools does it work with?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT, Claude, and Gemini. You can capture on any of the three and hand the conversation off to any of the three."}},
+      {"@type":"Question","name":"Where is my data, and what if I uninstall?","acceptedAnswer":{"@type":"Answer","text":"Everything stays in your browser's local storage on your own machine. You can export any conversation as PDF, HTML, an image, Markdown, or JSON at any time. Uninstalling removes the extension's local data."}},
+      {"@type":"Question","name":"Does it work on really long chats?","acceptedAnswer":{"@type":"Answer","text":"Yes. Capture grabs the full thread — it handles long, virtualized conversations where the page only keeps part of the chat in view, so messages aren't silently dropped."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Continue AI — Move any AI chat to ChatGPT, Claude, or Gemini",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "url": "https://continue-ai.netlify.app/",
+    "downloadUrl": "https://chromewebstore.google.com/detail/continue-ai-%E2%80%94-move-your-a/cojmibmimpeakmgllhpolgbjienedfkf",
+    "description": "Continue any AI conversation on another model in one click. Move the whole chat to ChatGPT, Claude, or Gemini without losing context. Local-first, no account.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2563eb"/><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span>Continue AI</span>
+    </a>
+    <nav class="navlinks">
+      <a href="#try">Try it</a>
+      <a href="#features">Features</a>
+      <a href="/blog/">Blog</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/continue-ai-%E2%80%94-move-your-a/cojmibmimpeakmgllhpolgbjienedfkf" target="_blank" rel="noopener" data-cws>Add to Chrome</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="aurora" aria-hidden="true"><b></b><b></b><b></b></div>
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot"></span> Free Chrome extension · no account</span>
+        <h1>Continue any AI chat — <span class="grad">on another model</span>, in one click</h1>
+        <p class="lead">Hit a limit or want a second opinion? Move the whole conversation to ChatGPT, Claude, or Gemini <b>without losing context</b> — local-first, no account.</p>
+        <div class="cta-row">
+          <a class="btn primary lg" href="https://chromewebstore.google.com/detail/continue-ai-%E2%80%94-move-your-a/cojmibmimpeakmgllhpolgbjienedfkf" target="_blank" rel="noopener" data-cws>Add to Chrome — Free</a>
+          <a class="btn ghost lg" href="#try">See it work →</a>
+        </div>
+        <p class="microcopy">Free · works across ChatGPT, Claude &amp; Gemini · your conversations never leave your device · no account</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mock" id="heroMock">
+          <div class="mock-bar"><span></span><span></span><span></span></div>
+          <div class="mock-body">
+            <div class="mock-compose">
+              <div class="mc-row"><span class="mc-l">Chat</span> <span id="heroFrom">ChatGPT</span> · 14 messages</div>
+              <div class="mc-row"><span class="mc-l">Carry</span> full context, code &amp; files</div>
+              <div class="mc-text"><span id="heroType"></span><span class="hcaret"></span></div>
+            </div>
+            <div class="picker" id="heroPicker">
+              <div class="picker-head">TRANSFER TO <span class="pk-key">1-CLICK</span></div>
+              <div class="picker-search"><span id="heroQuery" class="ph">Choose where to continue…</span></div>
+              <div class="picker-row sel"><b>Claude</b><small>Continue with the whole thread carried over</small></div>
+              <div class="picker-row"><b>ChatGPT</b><small>Pick up exactly where you left off</small></div>
+              <div class="picker-row"><b>Gemini</b><small>Hand the conversation across, in context</small></div>
+              <div class="picker-foot"><span>↑↓ choose</span><span>↵ hand off</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- field-notes running header -->
+    <div class="cr-ticker" aria-label="Field notes">
+      <div class="cr-tk-track" aria-hidden="true">
+        <div class="cr-tk-seg">
+          <span><b>FIELD NOTES</b></span>
+          <span>VOL.01</span>
+          <span>LOCAL-FIRST</span>
+          <span>ONE-CLICK HANDOFF</span>
+          <span>NO ACCOUNT</span>
+          <span><b>0 SERVERS</b></span>
+          <span>CHATGPT &middot; CLAUDE &middot; GEMINI</span>
+          <span>NOTHING TRANSMITTED</span>
+        </div>
+        <div class="cr-tk-seg">
+          <span><b>FIELD NOTES</b></span>
+          <span>VOL.01</span>
+          <span>LOCAL-FIRST</span>
+          <span>ONE-CLICK HANDOFF</span>
+          <span>NO ACCOUNT</span>
+          <span><b>0 SERVERS</b></span>
+          <span>CHATGPT &middot; CLAUDE &middot; GEMINI</span>
+          <span>NOTHING TRANSMITTED</span>
+        </div>
+      </div>
+      <div class="cr-tk-static"><span class="s">&#10042;</span> <b>FIELD NOTES</b> &mdash; VOL.01 &middot; LOCAL-FIRST &middot; ONE-CLICK HANDOFF &middot; NO ACCOUNT &middot; 0 SERVERS</div>
+    </div>
+
+    <!-- TRY IT (live, in-page) -->
+    <section id="try" class="section try-section">
+      <h2>Try it right here — no install</h2>
+      <p class="section-sub">Here's a chat that's run long. Pick where to continue and hit <kbd>Transfer</kbd> — watch it capture the thread, package it into a portable prompt, and hand it off, exactly like the extension does.</p>
+      <div class="try-wrap" id="transferDemo">
+        <div class="try-source" id="tdSource">
+          <div class="tc-bar"><span class="dots"><i></i><i></i><i></i></span><span class="tc-title" id="tdSourceName">ChatGPT</span><span class="tc-hint">running long…</span></div>
+          <div class="td-thread" id="tdThread"></div>
+          <div class="td-controls">
+            <label class="td-pick">Continue on
+              <select id="tdTarget" class="tv-co">
+                <option value="Claude">Claude</option>
+                <option value="ChatGPT">ChatGPT</option>
+                <option value="Gemini">Gemini</option>
+              </select>
+            </label>
+            <button class="btn primary sm" id="tdTransfer" type="button">Transfer ▸</button>
+            <span class="tc-status" id="tdStatus"></span>
+          </div>
+        </div>
+        <div class="try-compose" id="tdDest">
+          <div class="tc-bar"><span class="dots"><i></i><i></i><i></i></span><span class="tc-title" id="tdDestName">Claude</span><span class="tc-hint" id="tdDestHint">new chat</span></div>
+          <div class="tc-body" id="tdBody" aria-live="polite" data-ph="The portable prompt lands here…"></div>
+          <div class="tc-actions"><span class="tc-step" id="tdStep">Waiting for a handoff…</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- dimension-line divider -->
+    <div class="cr-dim" aria-hidden="true">
+      <div class="cr-dm-side l"><span class="cr-dm-tick"></span><span class="cr-dm-line"></span><span class="cr-dm-span">&#8960; ONE-CLICK</span></div>
+      <div class="cr-dm-plate"><span class="cr-dm-num" data-n="2">02</span><span class="cr-dm-label">The handoff</span></div>
+      <div class="cr-dm-side r"><span class="cr-dm-line"></span><span class="cr-dm-tick"></span><span class="cr-dm-span">SCALE 1:1</span></div>
+    </div>
+
+    <!-- FEATURES — the spec sheet -->
+    <section id="features" class="section ledger-section">
+      <div class="ledger-head">
+        <span>INDEX / 01–05 · WHAT IT DOES</span>
+        <span>FIVE PRIMITIVES</span>
+      </div>
+      <h2 class="ledger-title">Everything you need to <span class="grad">never lose a thread</span></h2>
+
+      <div class="ledger" tabindex="0" role="listbox" aria-label="Features — use arrow keys to inspect">
+
+        <div class="lrow" role="option" tabindex="-1" data-i="0">
+          <div class="rule"><i></i><b class="node"></b></div>
+          <div class="lrow-grid">
+            <div class="lnum" data-n="1">01</div>
+            <div class="lmain"><h3 class="lhead">One-click transfer</h3><p class="ldeck">Captures the chat and hands it to another AI — packaged into a portable prompt and auto-pasted on arrival. No copy-paste marathon.</p></div>
+            <div class="ldiag" aria-hidden="true">
+              <div class="dgrp"><code class="dmono">ChatGPT</code><span class="darrow">→</span><code class="dmono">Claude</code></div>
+              <div class="dlines"><i></i><i></i><i></i></div>
+              <span class="lcap">ONE-CLICK</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lrow alt" role="option" tabindex="-1" data-i="1">
+          <div class="rule"><i></i><b class="node"></b></div>
+          <div class="lrow-grid">
+            <div class="lnum" data-n="2">02</div>
+            <div class="lmain"><h3 class="lhead">Reliable capture</h3><p class="ldeck">Grabs the full thread — even long, virtualized chats where the page only keeps part of the conversation on screen. Nothing dropped.</p></div>
+            <div class="ldiag" aria-hidden="true">
+              <div class="dmarquee"><i></i><i></i><i></i><span class="dtag">FULL ✓</span></div>
+              <span class="lcap">FULL THREAD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lrow purple" role="option" tabindex="-1" data-i="2">
+          <div class="rule"><i></i><b class="node"></b></div>
+          <div class="lrow-grid">
+            <div class="lnum" data-n="3">03</div>
+            <div class="lmain"><h3 class="lhead">Save a copy</h3><p class="ldeck">Export any conversation as <code>PDF</code>, <code>HTML</code>, an image, <code>Markdown</code>, or <code>JSON</code> — keep it, share it, or archive it.</p></div>
+            <div class="ldiag" aria-hidden="true">
+              <div class="dstack"><span></span><span></span></div>
+              <span class="lcap">PDF · MD · JSON</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lrow alt teal" role="option" tabindex="-1" data-i="3">
+          <div class="rule"><i></i><b class="node"></b></div>
+          <div class="lrow-grid">
+            <div class="lnum" data-n="4">04</div>
+            <div class="lmain"><h3 class="lhead">Local-first &amp; private</h3><p class="ldeck">Runs on your device. No servers of ours, no telemetry, no account — your conversations never leave your machine unless you transfer one yourself.</p></div>
+            <div class="ldiag" aria-hidden="true">
+              <svg class="dshield" viewBox="0 0 40 44" fill="none" stroke="#0d9488" stroke-width="1.6"><path d="M20 3l15 6v11c0 9-6.5 15-15 18C12.5 35 6 29 6 20V9z"/><path d="M14 21l4.5 4.5L27 17" stroke-width="2"/></svg>
+              <span class="lcap">ON-DEVICE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lrow" role="option" tabindex="-1" data-i="4">
+          <div class="rule"><i></i><b class="node"></b></div>
+          <div class="lrow-grid">
+            <div class="lnum" data-n="5">05</div>
+            <div class="lmain"><h3 class="lhead">Works everywhere you chat</h3><p class="ldeck">ChatGPT, Claude, and Gemini — capture on any of them, continue on any of them.</p></div>
+            <div class="ldiag" aria-hidden="true">
+              <div class="dvars">ChatGPT · Claude · Gemini</div>
+              <span class="lcap">3 PLATFORMS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- GATED / NOT YET SHIPPED — unhide each card only when the feature actually ships.
+        <div class="lrow alt" role="option" tabindex="-1" data-i="5">
+          <div class="rule"><i></i><b class="node"></b></div>
+          <div class="lrow-grid">
+            <div class="lnum" data-n="6">06</div>
+            <div class="lmain"><h3 class="lhead">Transfer a slice</h3><p class="ldeck">Pick a start point and carry only what matters — hand off part of a conversation instead of the whole thing.</p></div>
+            <div class="ldiag" aria-hidden="true"><div class="dvars">FROM HERE →</div><span class="lcap">PARTIAL</span></div>
+          </div>
+        </div>
+        <div class="lrow purple" role="option" tabindex="-1" data-i="6">
+          <div class="rule"><i></i><b class="node"></b></div>
+          <div class="lrow-grid">
+            <div class="lnum" data-n="7">07</div>
+            <div class="lmain"><h3 class="lhead">Context meter</h3><p class="ldeck">See how much headroom is left before you hit the wall, so you can hand off before a chat stalls.</p></div>
+            <div class="ldiag" aria-hidden="true"><div class="dvars">▓▓▓▓░░ 64%</div><span class="lcap">HEADROOM</span></div>
+          </div>
+        </div>
+        -->
+
+        <div class="rule last"><i></i><b class="node"></b></div>
+      </div>
+      <div class="ledger-foot"><span>FIVE PRIMITIVES</span><span>↑ ↓ TO INSPECT · ↵ TO ACTUATE</span></div>
+    </section>
+
+    <!-- dimension-line divider -->
+    <div class="cr-dim" aria-hidden="true">
+      <div class="cr-dm-side l"><span class="cr-dm-tick"></span><span class="cr-dm-line"></span><span class="cr-dm-span">&#8960; COMMON QUESTIONS</span></div>
+      <div class="cr-dm-plate"><span class="cr-dm-num" data-n="3">03</span><span class="cr-dm-label">Reference</span></div>
+      <div class="cr-dm-side r"><span class="cr-dm-line"></span><span class="cr-dm-tick"></span><span class="cr-dm-span">SECTION &sect;</span></div>
+    </div>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details><summary>Is it free?</summary><p>Yes — Continue AI is completely free, with no account and no paywall. Every shipped feature is unlocked.</p></details>
+        <details><summary>Do you read or store my conversations?</summary><p>No. Capturing and packaging a conversation happens entirely on your device. There are no servers of ours, nothing is transmitted to us, and there's no account or telemetry. A conversation only goes to another AI when <em>you</em> choose to transfer it — and then it goes to that AI, not to us.</p></details>
+        <details><summary>Which AI tools does it work with?</summary><p>ChatGPT, Claude, and Gemini. You can capture on any of the three and hand the conversation off to any of the three.</p></details>
+        <details><summary>Where is my data, and what if I uninstall?</summary><p>Everything stays in your browser's local storage, on your own machine. You can export any conversation as PDF, HTML, an image, Markdown, or JSON at any time. Uninstalling removes the extension's local data.</p></details>
+        <details><summary>Does it work on really long chats?</summary><p>Yes. Capture grabs the full thread — it's built to handle long, virtualized conversations where the page only keeps part of the chat in view, so messages aren't silently dropped.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2563eb"/><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Continue AI
+      </div>
+      <nav class="foot-links">
+        <a href="#features">Features</a>
+        <a href="/blog/">Blog</a>
+        <a href="/privacy">Privacy</a>
+        <a href="mailto:boxai5115@gmail.com">boxai5115@gmail.com</a>
+      </nav>
+    </div>
+    <p class="foot-copy">© 2026 Continue AI. Local-first · no account · your conversations never leave your device.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
