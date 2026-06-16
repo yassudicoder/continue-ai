@@ -376,3 +376,133 @@ html[data-theme="dark"] .try-source, html[data-theme="dark"] #tdDest { color-sch
 @media (prefers-reduced-motion: reduce) {
   .td-msg.captured { outline: none; }
 }
+
+/* =====================================================================
+   RESPONSIVE / MOBILE POLISH — additive, mobile-only. Brings phones
+   (≤430) and tablets (≤768) up to the desktop design without touching it:
+   EVERY rule below is inside a max-width media query (or hover:none), so
+   nothing applies at desktop widths — the large-screen design is unchanged.
+   Shipped here (the last-loaded, every-page stylesheet) per the file's
+   own convention. Paired with the nav-drawer IIFE appended to creative.js.
+   ===================================================================== */
+
+/* sticky-header anchor offset — so in-page jumps clear the sticky nav.
+   (Harmless on a static screenshot; only affects where an anchor lands.) */
+#try, #features, #faq, .legal h2[id], .article-body h3[id] { scroll-margin-top: 76px; }
+
+/* the injected hamburger is hidden until we hit the mobile breakpoint */
+.nav-toggle { display: none; }
+
+/* ---------- TABLET + PHONE: top nav → hamburger drawer (shared) ---------- */
+@media (max-width: 900px) {
+  /* keep the top bar on one tidy row: logo + hamburger + CTA, nothing wrapping.
+     (the hamburger adds ~56px, so trim the bar padding + gaps to make room and
+     stop the brand / "Add to Chrome" label from wrapping and misaligning.) */
+  .nav { padding-left: 18px; padding-right: 18px; column-gap: 10px; }
+  .brand { flex: 0 0 auto; min-height: 44px; }   /* ≥44px tap target (hit area only) */
+  .brand span { white-space: nowrap; }
+  .navlinks { gap: 10px; flex: 0 0 auto; }
+  .navlinks .btn.primary {
+    flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 8px 14px; font-size: 14px; line-height: 1.2;
+    white-space: nowrap; text-align: center;          /* one centered line, matches hamburger height */
+  }
+
+  .nav-toggle {
+    display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 4px; width: 44px; height: 44px; padding: 0; margin: 0; flex: 0 0 auto;
+    background: transparent; border: 1px solid var(--line); border-radius: 11px;
+    color: var(--ink); cursor: pointer; -webkit-tap-highlight-color: transparent;
+  }
+  .nav-toggle span { width: 18px; height: 2px; border-radius: 2px; background: currentColor;
+    transition: transform .2s ease, opacity .2s ease; }
+  .nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  .nav-drawer {
+    position: absolute; top: 100%; left: 0; right: 0; z-index: 20;
+    display: flex; flex-direction: column;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    box-shadow: 0 24px 40px -28px rgba(20,24,48,.5);
+    padding: 2px 22px 10px;
+    max-height: 0; overflow: hidden; opacity: 0; visibility: hidden;
+    transition: max-height .26s ease, opacity .2s ease, visibility 0s linear .26s;
+  }
+  .nav.nav-open .nav-drawer {
+    max-height: 75vh; overflow: auto; opacity: 1; visibility: visible;
+    transition: max-height .3s ease, opacity .22s ease, visibility 0s;
+  }
+  .nav-drawer a, .nav-drawer .theme-toggle {
+    display: flex; align-items: center; justify-content: flex-start; gap: 10px;
+    width: 100%; min-height: 48px; padding: 12px 4px; margin: 0;
+    font-size: 16px; font-weight: 500; color: var(--ink); text-align: left;
+    border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent;
+  }
+  .nav-drawer .theme-toggle { width: 100%; height: auto; justify-content: flex-start; }
+  .nav-drawer > :last-child { border-bottom: 0; }
+
+  /* trivial nav (privacy: a single "Home" link, no CTA) — keep it inline */
+  .nav.nav-simple .navlinks a:not(.btn) { display: inline-flex; align-items: center; min-height: 44px; }
+
+  /* overflow backstop — clip (not hidden) so the sticky nav keeps working */
+  html, body { overflow-x: clip; }
+}
+
+/* ---------- TABLET + PHONE (≤768): homepage demo, hints, headline ---------- */
+@media (max-width: 768px) {
+  /* keyboard-only hints mean nothing on touch → hide; swap the hero's for a tap cue.
+     (.picker / .ledger live in aria-hidden decorative mocks, so this is purely visual.) */
+  .picker-foot { position: relative; justify-content: center; }
+  .picker-foot span { display: none; }
+  .picker-foot::after { content: "Tap a model to continue"; color: #aab1bd; font-size: 12px; }
+  .ledger-foot span:last-child { display: none; }
+
+  /* hero headline: clamp + balanced wrap so the CTAs stay above the fold at 390px */
+  .hero { padding-top: 34px; }
+  .hero h1 { font-size: clamp(27px, 7.2vw, 36px); text-wrap: balance; }
+
+  /* hero transfer card: legible copy, comfortable rows */
+  .picker-row { padding: 11px 15px; }
+  .picker-row small { font-size: 13px; }
+
+  /* "Try it" transfer demo: source on top, full-width Transfer control, dest below.
+     (.try-wrap is a plain block, so the two panes already stack — this just makes
+     the control comfortable for touch and prevents any sideways push.) */
+  .td-thread { max-height: 200px; }
+  .td-controls { gap: 10px; }
+  .td-pick { width: 100%; justify-content: space-between; }
+  .td-pick select { flex: 1 1 auto; min-height: 44px; }
+  .td-controls .btn.sm { width: 100%; min-height: 44px; padding: 12px 16px; font-size: 15px; }
+  .td-controls .tc-status { width: 100%; }
+
+  /* tap targets: footer links + blog-hub filter pills ≥44px */
+  .foot-links { gap: 12px 20px; }
+  .foot-links a { display: inline-flex; align-items: center; min-height: 44px; }
+  .cr-facet { min-height: 44px; }
+}
+
+/* ---------- TABLET/PHONE (≤760): blog-hub contents rows ---------- */
+@media (max-width: 760px) {
+  /* the spec-sheet collapses .tocrow-grid to "40px 1fr" and pins .toccat/.tocstatus
+     to column 2; without this, the auto-placed .tocmain falls into the 40px numeral
+     column and the title wraps one word per line. Pin it to the wide column. */
+  .tocrow-grid .tocmain { grid-column: 2; min-width: 0; }
+}
+
+/* ---------- PHONE (≤640): reading comfort + final backstops ---------- */
+@media (max-width: 640px) {
+  /* article body: capped measure already (760px); tighten side padding a touch,
+     keep 17px/1.72 type, and make sure nothing long pushes the page sideways */
+  .article, .related { padding-left: 20px; padding-right: 20px; }
+  .article-body { overflow-wrap: break-word; }
+  .article-body pre { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+  .article-body img { height: auto; }
+
+  /* marquee: never widen the page (belt-and-braces; it already clips + GPU-animates) */
+  .cr-ticker { overflow-x: clip; }
+
+  /* footer: stack centred on the narrowest screens */
+  .foot-inner { flex-direction: column; align-items: center; text-align: center; }
+  .foot-links { justify-content: center; }
+}

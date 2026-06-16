@@ -417,3 +417,83 @@
     bar.addEventListener("keydown", function (e) { if (e.key === "Escape" && active) { e.preventDefault(); setActive(null); } });
   }
 })();
+
+/* =====================================================================
+   mobile-nav — collapse the secondary nav links into a hamburger drawer
+   on small screens, keeping the logo + "Add to Chrome" CTA always visible.
+   Purely additive + matchMedia-guarded: on desktop it leaves the DOM
+   exactly as authored (so the large-screen nav is untouched), and it
+   reflows back and forth cleanly on resize. CSS for .nav-toggle /
+   .nav-drawer / .nav-open lives in the responsive block of creative.css.
+   ===================================================================== */
+(function () {
+  "use strict";
+  var nav = document.querySelector("header.nav");
+  var links = nav && nav.querySelector(".navlinks");
+  if (!nav || !links) return;
+
+  var secondary = [].slice.call(links.children).filter(function (el) {
+    return el.tagName === "A" && !el.classList.contains("btn");
+  });
+  if (!secondary.length) return;                       // nothing to collapse
+
+  var cta = links.querySelector("a.btn");
+  // trivial nav (e.g. the privacy page: one "Home" link, no CTA): show it inline,
+  // no hamburger needed — CSS .nav-simple un-hides the link on mobile.
+  if (!cta && secondary.length <= 1) { nav.classList.add("nav-simple"); return; }
+
+  var MQ = window.matchMedia("(max-width: 900px)");
+
+  var toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "nav-toggle";
+  toggle.setAttribute("aria-label", "Menu");
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-controls", "cr-nav-drawer");
+  toggle.innerHTML = "<span></span><span></span><span></span>";
+
+  var drawer = document.createElement("div");
+  drawer.className = "nav-drawer";
+  drawer.id = "cr-nav-drawer";
+
+  function setOpen(o) {
+    nav.classList.toggle("nav-open", o);
+    toggle.setAttribute("aria-expanded", o ? "true" : "false");
+  }
+  // nodes that live in the drawer on mobile: the secondary links + the theme toggle
+  function drawerNodes() {
+    var arr = secondary.slice();
+    var tog = links.querySelector(".theme-toggle") || drawer.querySelector(".theme-toggle");
+    if (tog) arr.push(tog);
+    return arr;
+  }
+
+  var built = false;
+  function build() {
+    if (built) return;
+    built = true;
+    if (cta) links.insertBefore(toggle, cta); else links.appendChild(toggle);
+    nav.appendChild(drawer);
+    drawerNodes().forEach(function (n) { drawer.appendChild(n); });
+  }
+  function teardown() {
+    if (!built) return;
+    built = false;
+    setOpen(false);
+    // restore the moved nodes to the front of .navlinks in their original order
+    drawerNodes().forEach(function (n) { links.insertBefore(n, toggle); });
+    if (toggle.parentNode) toggle.parentNode.removeChild(toggle);
+    if (drawer.parentNode) drawer.parentNode.removeChild(drawer);
+  }
+  function sync() { if (MQ.matches) build(); else teardown(); }
+
+  toggle.addEventListener("click", function () { setOpen(!nav.classList.contains("nav-open")); });
+  drawer.addEventListener("click", function (e) { if (e.target.closest("a")) setOpen(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+  document.addEventListener("click", function (e) {
+    if (nav.classList.contains("nav-open") && !nav.contains(e.target)) setOpen(false);
+  });
+  if (MQ.addEventListener) MQ.addEventListener("change", sync);
+  else if (MQ.addListener) MQ.addListener(sync);
+  sync();
+})();
