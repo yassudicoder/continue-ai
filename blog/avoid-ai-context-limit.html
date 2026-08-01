@@ -6,18 +6,18 @@
   <title>Hitting the Context Limit? How to Rescue a Long AI Chat (2026)</title>
   <meta name="description" content="Why long AI chats slow down, start forgetting, or refuse to continue — and how to move the conversation somewhere with room before it stalls, without losing the thread.">
   <meta name="keywords" content="ai context limit, chatgpt context window full, ai chat forgetting, long ai conversation, claude conversation too long, rescue ai chat">
-  <link rel="canonical" href="https://continue-ai.netlify.app/blog/avoid-ai-context-limit">
+  <link rel="canonical" href="https://continue-ai-lilac.vercel.app/blog/avoid-ai-context-limit">
   <meta property="og:title" content="Hitting the Context Limit? How to Rescue a Long AI Chat">
   <meta property="og:description" content="Why long chats slow down, forget, or refuse to continue — and how to move the conversation somewhere with room before it stalls.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://continue-ai.netlify.app/blog/avoid-ai-context-limit">
-  <meta property="og:image" content="https://continue-ai.netlify.app/og/cover.png">
+  <meta property="og:url" content="https://continue-ai-lilac.vercel.app/blog/avoid-ai-context-limit">
+  <meta property="og:image" content="https://continue-ai-lilac.vercel.app/og/cover.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Rescue a long AI chat before it hits the context limit by moving it to a fresh model.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://continue-ai.netlify.app/og/cover.png">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cpath d='M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z' fill='none' stroke='white' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <meta name="twitter:image" content="https://continue-ai-lilac.vercel.app/og/cover.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%23ff4f00'/%3E%3Cpath d='M5 7h9M5 12h14M5 17h9' stroke='%23fff7ef' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='17.5' cy='7' r='2' fill='%23fff7ef'/%3E%3Ccircle cx='17.5' cy='17' r='2' fill='%23fff7ef'/%3E%3C/svg%3E">
   <script>(function(){var d=document.documentElement;d.classList.add('js');try{var s=localStorage.getItem('cr-theme');d.setAttribute('data-theme',s||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));}catch(e){d.setAttribute('data-theme','light');}})();</script>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../spec-sheet.css">
@@ -35,16 +35,16 @@
     "author": { "@type": "Person", "name": "Yash Desai" },
     "publisher": { "@type": "Organization", "name": "Continue AI" },
     "datePublished": "2026-06-13", "dateModified": "2026-06-13",
-    "mainEntityOfPage": "https://continue-ai.netlify.app/blog/avoid-ai-context-limit"
+    "mainEntityOfPage": "https://continue-ai-lilac.vercel.app/blog/avoid-ai-context-limit"
   }
   </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org", "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://continue-ai.netlify.app/"},
-      {"@type":"ListItem","position":2,"name":"Blog","item":"https://continue-ai.netlify.app/blog/"},
-      {"@type":"ListItem","position":3,"name":"Rescue a long AI chat","item":"https://continue-ai.netlify.app/blog/avoid-ai-context-limit"}
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://continue-ai-lilac.vercel.app/"},
+      {"@type":"ListItem","position":2,"name":"Blog","item":"https://continue-ai-lilac.vercel.app/blog/"},
+      {"@type":"ListItem","position":3,"name":"Rescue a long AI chat","item":"https://continue-ai-lilac.vercel.app/blog/avoid-ai-context-limit"}
     ]
   }
   </script>
@@ -52,7 +52,7 @@
 <body>
   <header class="nav">
     <a class="brand" href="/">
-      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2563eb"/><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#ff4f00"/><path d="M5 7h9M5 12h14M5 17h9" stroke="#fff7ef" stroke-width="2.1" stroke-linecap="round"/><circle cx="17.5" cy="7" r="2" fill="#fff7ef"/><circle cx="17.5" cy="17" r="2" fill="#fff7ef"/></svg>
       <span>Continue AI</span>
     </a>
     <nav class="navlinks">
@@ -152,7 +152,7 @@
   <footer class="footer">
     <div class="foot-inner">
       <div class="foot-brand">
-        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2563eb"/><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#ff4f00"/><path d="M5 7h9M5 12h14M5 17h9" stroke="#fff7ef" stroke-width="2.1" stroke-linecap="round"/><circle cx="17.5" cy="7" r="2" fill="#fff7ef"/><circle cx="17.5" cy="17" r="2" fill="#fff7ef"/></svg>
         Continue AI
       </div>
       <nav class="foot-links">

@@ -1,58 +1,44 @@
 <!doctype html>
+<!-- Source for og/cover.png — open at exactly 1200×630 and screenshot.
+     Uses the site's self-hosted fonts (../fonts/). -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { width: 1200px; height: 630px; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: #fafbff; color: #161c2d; position: relative; overflow: hidden;
-    background-image:
-      linear-gradient(rgba(37,99,235,.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(37,99,235,.06) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-  .frame { position: absolute; inset: 28px; border: 1px solid rgba(37,99,235,.18); }
-  .mk { position: absolute; width: 12px; height: 12px; border: 2px solid #2563eb; }
-  .mk.tl { top: 22px; left: 22px; border-right: 0; border-bottom: 0; }
-  .mk.tr { top: 22px; right: 22px; border-left: 0; border-bottom: 0; }
-  .mk.bl { bottom: 22px; left: 22px; border-right: 0; border-top: 0; }
-  .mk.br { bottom: 22px; right: 22px; border-left: 0; border-top: 0; }
-  .wrap { position: absolute; inset: 0; padding: 78px 84px; display: flex; flex-direction: column; }
-  .kicker { font: 700 16px ui-monospace, "SFMono-Regular", Menlo, monospace; letter-spacing: .22em; color: #5b6478; text-transform: uppercase; }
-  .brand { display: flex; align-items: center; gap: 16px; margin-top: 14px; }
-  .logo { width: 56px; height: 56px; border-radius: 13px; background: #2563eb; display: flex; align-items: center; justify-content: center; }
-  .brandname { font-size: 40px; font-weight: 800; letter-spacing: -.02em; }
-  h1 { font-size: 64px; line-height: 1.06; font-weight: 800; letter-spacing: -.03em; margin-top: 40px; max-width: 940px; }
-  h1 .grad { background: linear-gradient(92deg, #2563eb, #7c3aed); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .flow { display: flex; align-items: center; gap: 18px; margin-top: 42px; font-size: 26px; font-weight: 700; }
-  .pill { padding: 12px 22px; border-radius: 999px; background: #fff; border: 1px solid #e3e7f2; box-shadow: 0 10px 24px -16px rgba(26,33,64,.45); }
-  .arrow { color: #2563eb; font-size: 30px; }
-  .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font: 600 19px ui-monospace, Menlo, monospace; letter-spacing: .04em; color: #5b6478; }
-  .foot b { color: #161c2d; }
-  .tag { color: #2563eb; }
+  @font-face { font-family: 'Archivo'; font-style: normal; font-weight: 100 900; font-stretch: 62% 125%;
+    src: url('../fonts/archivo-100-900.woff2') format('woff2'); }
+  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500;
+    src: url('../fonts/ibm-plex-mono-500.woff2') format('woff2'); }
+  * { margin: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 630px; background: #f4f1ea; color: #16170f;
+    font-family: 'Archivo', sans-serif; overflow: hidden; position: relative; padding: 64px 72px; }
+  .doc { font: 500 15px 'IBM Plex Mono', monospace; letter-spacing: .14em; color: #a3a091; }
+  h1 { font-size: 92px; line-height: .98; font-weight: 900; letter-spacing: -.02em;
+    text-transform: uppercase; margin-top: 46px; white-space: nowrap; }
+  h1 .o { color: #ff4f00; }
+  .route { position: absolute; left: 72px; right: 72px; bottom: 150px; display: flex; align-items: center; gap: 18px;
+    font: 500 17px 'IBM Plex Mono', monospace; letter-spacing: .1em; color: #6f6d5f; }
+  .route .line { flex: 1; border-top: 3px dashed #ff4f00; position: relative; }
+  .cap { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    background: #ff4f00; color: #fff7ef; font: 500 15px 'IBM Plex Mono', monospace; letter-spacing: .14em;
+    padding: 12px 20px; border-radius: 999px; box-shadow: 0 8px 30px rgba(255,79,0,.35); white-space: nowrap; }
+  .facts { position: absolute; left: 72px; right: 72px; bottom: 64px;
+    font: 500 15px 'IBM Plex Mono', monospace; letter-spacing: .14em; color: #6f6d5f;
+    border-top: 1px solid rgba(22,23,15,.18); padding-top: 22px; display: flex; justify-content: space-between; }
+  .brand { position: absolute; top: 58px; right: 72px; display: flex; align-items: center; gap: 10px;
+    font: 800 20px 'Archivo'; letter-spacing: .12em; }
+  .brand b { color: #ff4f00; }
 </style>
 </head>
 <body>
-  <div class="frame"></div>
-  <span class="mk tl"></span><span class="mk tr"></span><span class="mk bl"></span><span class="mk br"></span>
-  <div class="wrap">
-    <div class="kicker">FIELD NOTES · VOL.01 · CHROME EXTENSION</div>
-    <div class="brand">
-      <span class="logo"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 10.2h5M9.5 12.2h3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-      <span class="brandname">Continue AI</span>
-    </div>
-    <h1>Continue any AI chat — <span class="grad">on another model</span>, in one click.</h1>
-    <div class="flow">
-      <span class="pill">ChatGPT</span><span class="arrow">→</span>
-      <span class="pill">Claude</span><span class="arrow">→</span>
-      <span class="pill">Gemini</span>
-    </div>
-    <div class="foot">
-      <span><b>Without losing context.</b> &nbsp;Local-first · no account.</span>
-      <span class="tag">SCALE 1:1</span>
-    </div>
+  <p class="doc"><span>CONTINUE AI — FREE CHROME EXTENSION</span></p>
+  <div class="brand"><svg width="30" height="30" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#ff4f00"/><path d="M5 7h9M5 12h14M5 17h9" stroke="#fff7ef" stroke-width="2.1" stroke-linecap="round"/><circle cx="17.5" cy="7" r="2" fill="#fff7ef"/><circle cx="17.5" cy="17" r="2" fill="#fff7ef"/></svg>CONTINUE<b>AI</b></div>
+  <h1>Switch the model.<br><span class="o">Keep the thread.</span></h1>
+  <div class="route">
+    <span>◦ CHATGPT</span>
+    <span class="line"><span class="cap">CTX-CAPSULE ▸</span></span>
+    <span style="color:#16170f">● CLAUDE · GEMINI · +5</span>
   </div>
+  <p class="facts"><span>LOCAL-FIRST · NO ACCOUNT · NO TELEMETRY</span><span>ONE CLICK · EIGHT DESTINATIONS</span></p>
 </body>
 </html>
