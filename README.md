@@ -25,11 +25,11 @@ requests** (fonts are self-hosted, analytics ships off).
 | `thread.js` | rAF scroll engine driving the pinned film + the interactive transfer room |
 | `fonts/` | Self-hosted woff2 (Archivo variable, IBM Plex Mono, Instrument Serif) |
 | `DESIGN.md` | Creative system: thesis, visual language, storyboard, motion & tech plan |
-| `blog/` | Blog hub + 3 articles (legacy design system, rethemed to the new accent) |
+| `blog.css` | Blog + legal skin on top of `thread.css` tokens (both themes for free) |
+| `blog/` | Blog hub + 3 articles, on the same design system as the landing |
 | `privacy.html` | Privacy policy |
 | `og/` | Open Graph cover (`cover.png`) + its HTML source (screenshot at 1200×630) |
-| `styles.css`, `spec-sheet.css`, `dark.css`, `creative.css` | Legacy system — used by blog + privacy only |
-| `motion.js`, `creative.js`, `theme.js`, `analytics.js` | Behaviour for blog/privacy (analytics off by default; also loaded no-op on the landing) |
+| `analytics.js` | Analytics stub (off by default) |
 | `_redirects`, `vercel.json`, `robots.txt`, `sitemap.xml` | Hosting + SEO config |
 
 ## Notes for editing the landing
