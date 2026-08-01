@@ -133,8 +133,8 @@
     F.chB.style.transform = offB;
     // route line through the void
     var line = mob
-      ? '<line x1="50" y1="6" x2="50" y2="94" stroke="#ff4f00" stroke-width=".45" stroke-dasharray="1.6 2.2" vector-effect="non-scaling-stroke"/>'
-      : '<line x1="6" y1="50" x2="94" y2="50" stroke="#ff4f00" stroke-width=".45" stroke-dasharray="1.6 2.2" vector-effect="non-scaling-stroke"/>';
+      ? '<line x1="50" y1="6" x2="50" y2="94" stroke="#6b96ff" stroke-width=".45" stroke-dasharray="1.6 2.2" vector-effect="non-scaling-stroke"/>'
+      : '<line x1="6" y1="50" x2="94" y2="50" stroke="#6b96ff" stroke-width=".45" stroke-dasharray="1.6 2.2" vector-effect="non-scaling-stroke"/>';
     F.thread.setAttribute("viewBox", "0 0 100 100");
     F.thread.innerHTML = line;
   }

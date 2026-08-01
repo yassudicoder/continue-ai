@@ -21,7 +21,7 @@ requests** (fonts are self-hosted, analytics ships off).
 | Path | What |
 |---|---|
 | `index.html` | The experience: arrival, the journey film (+ static storyboard fallback), transfer room demo, manual-way contrast, cargo manifest, field manual, last call |
-| `thread.css` | Design system for the landing (paper/ink/international orange) |
+| `thread.css` | Design system for the landing (paper/ink/extension signal blue) |
 | `thread.js` | rAF scroll engine driving the pinned film + the interactive transfer room |
 | `fonts/` | Self-hosted woff2 (Archivo variable, IBM Plex Mono, Instrument Serif) |
 | `DESIGN.md` | Creative system: thesis, visual language, storyboard, motion & tech plan |

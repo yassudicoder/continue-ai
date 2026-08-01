@@ -33,10 +33,10 @@ timeline: **scrolling performs the product.** The visitor doesn't read about a
 transfer; they scrub through one.
 
 Brand posture: **freight infrastructure for intelligence.** Waybills, cargo
-manifests, customs stamps, routing boards. The capsule is painted
-international orange for the same reason flight recorders are: so it can't be
-lost. The site should feel like documents from a shipping company that moves
-conversations instead of containers.
+manifests, customs stamps, routing boards. The capsule is painted in the
+extension's own signal blue, so the thing doing the carrying is always
+unmistakably Continue AI. The site should feel like documents from a shipping
+company that moves conversations instead of containers.
 
 Anchor line: **NEVER LOSE THE THREAD.**
 
@@ -45,8 +45,10 @@ Anchor line: **NEVER LOSE THE THREAD.**
 - **Canvas** — warm paper `#f4f1ea` and deep ink `#12130f`. Light ↔ dark is a
   *narrative* device, not a theme: paper inside the model chambers, ink in the
   void between them. No gradients, no glass, no glow, no particles.
-- **Accent** — international orange `#ff4f00`. One accent; it is always the
-  thread / the capsule / Continue AI acting. Model identities are 8px dots only.
+- **Accent** — the extension's signal blue `#2563eb` (with `#1d4fd7` for small
+  text on paper and `#6b96ff` for accent text on the void). One accent; it is
+  always the thread / the capsule / Continue AI acting. Model identities are
+  8px dots only.
 - **Type** — three voices:
   - `Archivo` (variable, 500–900, some expanded) — the SHOUT: headlines, stamps.
   - `IBM Plex Mono` (400/500) — the MACHINE: manifests, states, annotations,
@@ -72,7 +74,7 @@ Anchor line: **NEVER LOSE THE THREAD.**
     time-lapses past; message counter and context meter climb.
   2. **THE WALL** — meter reddens, `CONTEXT LIMIT` stamp slams, the composer
     disables. "Every model has a wall."
-  3. **CAPTURE** — the orange needle sweeps; every message gets an x-ray
+  3. **CAPTURE** — the blue needle sweeps; every message gets an x-ray
     outline and a mono tag (USER / ASSISTANT / CODE / DECISION); the manifest
     counts up to 100% integrity. (Sample data, labeled.)
   4. **PACKAGE** — the tagged rows compress onto the thread into a capsule
@@ -89,7 +91,7 @@ Anchor line: **NEVER LOSE THE THREAD.**
   route → reconstruct in miniature and **copies a real portable prompt** to the
   visitor's clipboard. Labeled: sample conversation, real prompt.
 - **S4 THE MANUAL WAY** — controlled chaos vs one straight line. Nine scraps of
-  the copy-paste ritual on a tangled gray path; then one orange line, one
+  the copy-paste ritual on a tangled gray path; then one straight accent line, one
   action.
 - **S5 MANIFEST** (`#features`) — five cargo-manifest rows, each demonstrated,
   none identical: full-thread capture (virtualized window diagram) · 3 in → 8
@@ -102,7 +104,7 @@ Anchor line: **NEVER LOSE THE THREAD.**
 ## 5 · SIGNATURE INTERACTION
 
 **The Crossing.** A conversation physically leaves ChatGPT — decomposes into
-tagged layers, compresses into an orange capsule on a thread, crosses an empty
+tagged layers, compresses into a signal-blue capsule on a thread, crosses an empty
 black interchange past a routing board, enters Claude, and unspools back into
 the same conversation — in one continuous scroll-scrubbed motion. It explains
 capture, packaging, routing, privacy, and continuity without a word of UI copy,
@@ -117,7 +119,7 @@ and it is the moment people will record.
   they leave along it.
 - Stamps slam: scale 1.5 → 0.95 → 1 with ~2° rotation, 200ms, once per pass.
 - Micro: magnetic primary CTA, mono state text on hover, copy-confirmation is a
-  stamp, focus states are visible orange rules.
+  stamp, focus states are visible accent rules.
 - `prefers-reduced-motion`: the pinned film becomes six static storyboard
   frames with captions; reveals become plain visibility; the demo jumps between
   states without tweens. Same information, same order, no motion.
@@ -135,8 +137,8 @@ and it is the moment people will record.
   annotates it, it doesn't replace it), `thread.css`, `thread.js`.
   Blog + privacy keep the legacy system (`styles.css` …) with an accent
   retheme; landing anchors `#try` `#features` `#faq` are preserved.
-- Fonts: Google Fonts (Archivo variable; IBM Plex Mono 400/500; Instrument
-  Serif italic), `display=swap`.
+- Fonts: self-hosted woff2 (Archivo variable; IBM Plex Mono 400/500;
+  Instrument Serif italic), preloaded, `display=swap`.
 - A11y: semantic sections behind the film, keyboard-operable demo, visible
   focus, ARIA labels on the stage ("animated illustration of a transfer"),
   decorative layers `aria-hidden`.
