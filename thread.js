@@ -131,12 +131,16 @@
       rebBottoms: F.msgsB.map(function (m) { return m.offsetTop + m.offsetHeight; })
     };
     F.chB.style.transform = offB;
-    // route line through the void
+    // route line through the void — blue (source) fading to violet (destination),
+    // the same gradient the extension's icon uses for "transfer"
+    var grad = mob
+      ? '<linearGradient id="routeGrad" gradientUnits="userSpaceOnUse" x1="50" y1="6" x2="50" y2="94"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>'
+      : '<linearGradient id="routeGrad" gradientUnits="userSpaceOnUse" x1="6" y1="50" x2="94" y2="50"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>';
     var line = mob
-      ? '<line x1="50" y1="6" x2="50" y2="94" stroke="#6b96ff" stroke-width=".45" stroke-dasharray="1.6 2.2" vector-effect="non-scaling-stroke"/>'
-      : '<line x1="6" y1="50" x2="94" y2="50" stroke="#6b96ff" stroke-width=".45" stroke-dasharray="1.6 2.2" vector-effect="non-scaling-stroke"/>';
+      ? '<line x1="50" y1="6" x2="50" y2="94" stroke="url(#routeGrad)" stroke-width=".45" stroke-dasharray="1.6 2.2" vector-effect="non-scaling-stroke"/>'
+      : '<line x1="6" y1="50" x2="94" y2="50" stroke="url(#routeGrad)" stroke-width=".45" stroke-dasharray="1.6 2.2" vector-effect="non-scaling-stroke"/>';
     F.thread.setAttribute("viewBox", "0 0 100 100");
-    F.thread.innerHTML = line;
+    F.thread.innerHTML = "<defs>" + grad + "</defs>" + line;
   }
 
   /* per-frame film render — p ∈ [0,1] over the journey scroll */
@@ -174,8 +178,10 @@
     F.ctMeter.style.transform = "scaleX(" + pct / 100 + ")";
     setText(F.chAMeta, "SAMPLE · CONTEXT " + pct + "%");
 
-    /* ── act 2 · the wall ── */
+    /* ── act 2 · the wall (amber warning first, rose at the limit —
+       the extension's own status colors) ── */
     var walled = p >= .20 && p < .47;
+    F.chA.classList.toggle("warm", !walled && pct >= 72);
     F.chA.classList.toggle("walled", walled);
     F.chA.classList.toggle("hit", p >= .205 && p < .25);
     F.stampLimit.classList.toggle("on", p >= .215 && p < .315);

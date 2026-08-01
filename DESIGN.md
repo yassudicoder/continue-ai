@@ -25,10 +25,10 @@ The user pastes. Every scene on the site respects that mechanic.
 **THE THREAD.** The entire site is one continuous line.
 
 The conversation is drawn as a single thread that runs the full height of the
-page. It begins inside Model A's chamber, gets thicker with accumulated context,
-hits the context wall, is captured and wound into a capsule, crosses the empty
-interchange between models — the void that proves nothing sits in the middle —
-and unwinds inside Model B, where it keeps going. The scrollbar is the transfer
+page. It begins inside Model A's chamber blue, hits the context wall, is
+captured and wound into a capsule, crosses the empty interchange between
+models — the void that proves nothing sits in the middle — and unwinds inside
+Model B violet: the same blue→violet transfer the extension's icon encodes. The scrollbar is the transfer
 timeline: **scrolling performs the product.** The visitor doesn't read about a
 transfer; they scrub through one.
 
@@ -42,13 +42,15 @@ Anchor line: **NEVER LOSE THE THREAD.**
 
 ## 3 · VISUAL LANGUAGE
 
-- **Canvas** — warm paper `#f4f1ea` and deep ink `#12130f`. Light ↔ dark is a
-  *narrative* device, not a theme: paper inside the model chambers, ink in the
-  void between them. No gradients, no glass, no glow, no particles.
-- **Accent** — the extension's signal blue `#2563eb` (with `#1d4fd7` for small
-  text on paper and `#6b96ff` for accent text on the void). One accent; it is
-  always the thread / the capsule / Continue AI acting. Model identities are
-  8px dots only.
+- **Canvas** — the extension's own dark UI: `#0a0a0a` page, `#171717` surfaces
+  (Tailwind neutral-950/900), landing in the icon's deep navy `#010a1c` for the
+  void between models and the final act.
+- **Accent** — the icon's transfer gradient: blue `#3b82f6` (source side) →
+  violet `#8b5cf6` (destination side), with bright `#60a5fa`/`#a78bfa` for
+  small text. The gradient is reserved for transfer objects — the thread, the
+  capsule, the progress rail, the accent headline words. Status colors follow
+  the extension: rose `#f43f5e` for limits, amber `#f59e0b` for warnings.
+  Model identities are 8px dots only.
 - **Type** — three voices:
   - `Archivo` (variable, 500–900, some expanded) — the SHOUT: headlines, stamps.
   - `IBM Plex Mono` (400/500) — the MACHINE: manifests, states, annotations,
@@ -74,7 +76,7 @@ Anchor line: **NEVER LOSE THE THREAD.**
     time-lapses past; message counter and context meter climb.
   2. **THE WALL** — meter reddens, `CONTEXT LIMIT` stamp slams, the composer
     disables. "Every model has a wall."
-  3. **CAPTURE** — the blue needle sweeps; every message gets an x-ray
+  3. **CAPTURE** — the needle sweeps; every message gets an x-ray
     outline and a mono tag (USER / ASSISTANT / CODE / DECISION); the manifest
     counts up to 100% integrity. (Sample data, labeled.)
   4. **PACKAGE** — the tagged rows compress onto the thread into a capsule
@@ -104,7 +106,7 @@ Anchor line: **NEVER LOSE THE THREAD.**
 ## 5 · SIGNATURE INTERACTION
 
 **The Crossing.** A conversation physically leaves ChatGPT — decomposes into
-tagged layers, compresses into a signal-blue capsule on a thread, crosses an empty
+tagged layers, compresses into a gradient capsule on a thread, crosses an empty
 black interchange past a routing board, enters Claude, and unspools back into
 the same conversation — in one continuous scroll-scrubbed motion. It explains
 capture, packaging, routing, privacy, and continuity without a word of UI copy,
