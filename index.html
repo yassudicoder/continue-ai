@@ -25,13 +25,20 @@
   <link rel="preload" href="fonts/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/instrument-serif-400-italic.woff2" as="font" type="font/woff2" crossorigin>
   <script>
-    /* pre-paint: decide film vs storyboard here so the journey's 760vh scroll
-       runway exists before first layout — no shift when thread.js arrives */
-    document.documentElement.classList.add('js');
-    try {
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
-        document.documentElement.classList.add('film-on');
-    } catch (e) {}
+    /* pre-paint: theme (shared cr-theme key with the blog) + film vs storyboard,
+       both decided before first layout — no flash, no shift */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('cr-theme') ||
+                (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        d.setAttribute('data-theme', t);
+      } catch (e) { d.setAttribute('data-theme', 'dark'); }
+      try {
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('film-on');
+      } catch (e) {}
+    })();
   </script>
   <link rel="stylesheet" href="thread.css">
   <script src="analytics.js" defer></script>
@@ -76,6 +83,10 @@
       <a href="#features">Manifest</a>
       <a href="/blog/">Blog</a>
       <a href="#faq">FAQ</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch between dark and light theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8z"/></svg>
+      </button>
       <a class="cta" href="https://chromewebstore.google.com/detail/continue-ai-%E2%80%94-move-your-a/cojmibmimpeakmgllhpolgbjienedfkf" target="_blank" rel="noopener" data-cws>Add to Chrome<span class="cta-sub">FREE · NO ACCOUNT</span></a>
     </nav>
   </header>

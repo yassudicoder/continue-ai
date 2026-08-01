@@ -212,7 +212,7 @@ html[data-theme="dark"] .cr-sn-note { border-left-color: #2b3040; }
 html[data-theme="dark"] .cr-sn-note b, html[data-theme="dark"] .cr-sn-note strong { color: #fff; }
 @media (min-width: 1280px) {
   html[data-theme="dark"] .article-body .cr-sn-note { color: #6c7589; }
-  html[data-theme="dark"] .article-body .cr-sn.cr-sn-lit > .cr-sn-note { color: #e8eaf2; }
+  html[data-theme="dark"] .article-body .cr-sn.cr-sn-lit > .cr-sn-note { color: #f0f0f0; }
 }
 
 /* ---------- REDUCED MOTION: instant, no slide ---------- */

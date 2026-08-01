@@ -51,6 +51,11 @@ Anchor line: **NEVER LOSE THE THREAD.**
   capsule, the progress rail, the accent headline words. Status colors follow
   the extension: rose `#f43f5e` for limits, amber `#f59e0b` for warnings.
   Model identities are 8px dots only.
+- **Two modes** — dark is the extension's native canvas; light flips the page
+  to the family's light neutrals. The void, departures board, last call, and
+  footer stay night in both: the space between models is always dark. Toggle
+  in the nav, `cr-theme` storage shared with the blog, OS preference honored
+  until the visitor chooses.
 - **Type** — three voices:
   - `Archivo` (variable, 500–900, some expanded) — the SHOUT: headlines, stamps.
   - `IBM Plex Mono` (400/500) — the MACHINE: manifests, states, annotations,

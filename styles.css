@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;450;500;600&display=swap');
+@font-face {
+  font-family: 'Archivo'; font-style: normal; font-weight: 100 900;
+  font-stretch: 62% 125%; font-display: swap;
+  src: url('fonts/archivo-100-900.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400;
+  font-display: swap; src: url('fonts/ibm-plex-mono-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500;
+  font-display: swap; src: url('fonts/ibm-plex-mono-500.woff2') format('woff2');
+}
 
 :root {
   --blue: #2563eb; --blue-dark: #1d4fd7; --ink: #11131a; --muted: #5c6475;
@@ -7,19 +19,19 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--ink); background: var(--bg);
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.6;
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.6;
   -webkit-font-smoothing: antialiased; }
-h1, h2, h3, .brand, .plan-price { font-family: "Plus Jakarta Sans", system-ui, sans-serif; }
+h1, h2, h3, .brand, .plan-price { font-family: "Archivo", system-ui, sans-serif; }
 h1, h2, h3 { line-height: 1.12; letter-spacing: -.02em; }
 a { color: inherit; text-decoration: none; }
-kbd { background: #fff; border: 1px solid #dfe3ee; border-bottom-width: 2px; border-radius: 6px; padding: 1px 7px; font: 600 13px "Inter"; box-shadow: 0 1px 0 rgba(0,0,0,.02); }
+kbd { background: #fff; border: 1px solid #dfe3ee; border-bottom-width: 2px; border-radius: 6px; padding: 1px 7px; font: 500 12px "IBM Plex Mono", monospace; box-shadow: 0 1px 0 rgba(0,0,0,.02); }
 code { background: #f0f2f8; padding: 1px 6px; border-radius: 6px; font-size: .88em; color: #3a4250; }
 
 /* buttons */
 .btn { display: inline-block; border: 1px solid var(--line); background: #fff; color: var(--ink);
   border-radius: 11px; padding: 10px 18px; font-weight: 600; font-size: 15px; cursor: pointer; transition: .15s; }
 .btn:hover { background: var(--soft); transform: translateY(-1px); }
-.btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; box-shadow: 0 6px 18px var(--ring); }
+.btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; box-shadow: 0 6px 18px var(--ring); font-weight: 700; }
 .btn.primary:hover { background: var(--blue-dark); }
 .btn.ghost { background: transparent; }
 .btn.dark { background: var(--ink); border-color: var(--ink); color: #fff; }
@@ -174,7 +186,7 @@ code { background: #f0f2f8; padding: 1px 6px; border-radius: 6px; font-size: .88
 .article-meta .post-tag { font-size: 12px; }
 .article-lead { font-size: 19px; color: var(--muted); line-height: 1.55; margin: 18px 0 6px; }
 .toc { background: var(--soft); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; margin: 30px 0; }
-.toc strong { display: block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 14px; letter-spacing: .02em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.toc strong { display: block; font-family: "Archivo", sans-serif; font-size: 14px; letter-spacing: .02em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
 .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 28px; }
 .toc li { margin: 5px 0; }
 .toc a { color: #3a4250; } .toc a:hover { color: var(--blue); }
@@ -198,7 +210,7 @@ code { background: #f0f2f8; padding: 1px 6px; border-radius: 6px; font-size: .88
 
 .ctable { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .ctable th, .ctable td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
-.ctable thead th { background: var(--soft); font-family: "Plus Jakarta Sans", sans-serif; font-size: 14px; }
+.ctable thead th { background: var(--soft); font-family: "Archivo", sans-serif; font-size: 14px; }
 .ctable tbody tr:last-child td { border-bottom: 0; }
 .ctable td.yes { color: #16a34a; font-weight: 600; } .ctable td.no { color: #b4262a; }
 .ctable .hl { background: #f5f7ff; }
@@ -249,7 +261,7 @@ code { background: #f0f2f8; padding: 1px 6px; border-radius: 6px; font-size: .88
 @keyframes hdrift2 { to { transform: translate(-42px,30px) scale(1.1); } }
 
 /* animated gradient accent in the headline */
-.grad { background: linear-gradient(100deg, #2563eb, #7c3aed 55%, #0d9488); -webkit-background-clip: text; background-clip: text;
+.grad { background: linear-gradient(100deg, #2563eb, #7c3aed); -webkit-background-clip: text; background-clip: text;
   color: transparent; background-size: 220% auto; animation: gradmove 7s linear infinite; }
 @keyframes gradmove { to { background-position: 220% center; } }
 

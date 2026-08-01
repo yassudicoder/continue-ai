@@ -293,6 +293,28 @@
     });
   } catch (e) {}
 
+  /* ═══ theme toggle — shares the blog's cr-theme key ═══ */
+  (function () {
+    var root = d.documentElement, btn = byId("themeBtn");
+    var metaTheme = d.querySelector('meta[name="theme-color"]');
+    function apply(t, persist) {
+      root.setAttribute("data-theme", t);
+      if (metaTheme) metaTheme.setAttribute("content", t === "light" ? "#fafafa" : "#0a0a0a");
+      if (persist) { try { localStorage.setItem("cr-theme", t); } catch (e) {} }
+    }
+    apply(root.getAttribute("data-theme") === "light" ? "light" : "dark", false);
+    if (btn) btn.addEventListener("click", function () {
+      apply(root.getAttribute("data-theme") === "light" ? "dark" : "light", true);
+    });
+    // follow the OS only while the user hasn't made an explicit choice
+    try {
+      matchMedia("(prefers-color-scheme: light)").addEventListener("change", function (e) {
+        var stored = null; try { stored = localStorage.getItem("cr-theme"); } catch (err) {}
+        if (!stored) apply(e.matches ? "light" : "dark", false);
+      });
+    } catch (e) {}
+  })();
+
   /* ═══ reveal: manifest rows draw their top rule ═══ */
   (function () {
     var rows = [].slice.call(d.querySelectorAll(".crow"));
