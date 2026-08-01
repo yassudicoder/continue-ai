@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://continue-ai.netlify.app/sitemap.xml
+Sitemap: https://continue-ai-lilac.vercel.app/sitemap.xml
