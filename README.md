@@ -22,8 +22,7 @@ trust-boundary privacy map, and a cargo-manifest feature ledger.
 | `index.html` | Landing page (THE CROSSING scroll narrative, handoff terminal, trust boundary, cargo manifest, FAQ) |
 | `transit.css`, `transit.js` | The landing page's design system + behaviour (self-contained, no dependencies) |
 | `fonts/` | Self-hosted woff2 (Space Grotesk · JetBrains Mono · Inter, latin subsets) |
-| `blog/` | Blog hub + 3 articles (legacy structure, re-skinned dark via `transit-blog.css`) |
-| `transit-blog.css` | Override sheet that brings blog + privacy in line with the landing (dark, brand blue, TRANSIT fonts) |
+| `blog/` | Blog hub + 3 articles (legacy "field notes" styling) |
 | `privacy.html` | Privacy policy |
 | `og/` | Open Graph cover (`cover.png`) + its HTML source (render at 1200×630) |
 | `styles.css`, `spec-sheet.css`, `dark.css`, `creative.css` | Legacy design system, still used by `blog/` + `privacy.html` |
