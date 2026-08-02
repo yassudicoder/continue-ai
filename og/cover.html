@@ -1,58 +1,56 @@
 <!doctype html>
+<!-- Source for og/cover.png — render at exactly 1200×630 and screenshot. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Continue AI — OG cover source</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { width: 1200px; height: 630px; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: #fafbff; color: #161c2d; position: relative; overflow: hidden;
-    background-image:
-      linear-gradient(rgba(37,99,235,.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(37,99,235,.06) 1px, transparent 1px);
-    background-size: 40px 40px;
+  @font-face{font-family:"Space Grotesk";font-weight:700;src:url("../fonts/space-grotesk-latin-700-normal.woff2") format("woff2")}
+  @font-face{font-family:"JetBrains Mono";font-weight:400;src:url("../fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2")}
+  *{box-sizing:border-box;margin:0}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{
+    position:relative;background:#07090d;color:#e9edf5;
+    font-family:"Space Grotesk",system-ui,sans-serif;
+    padding:64px 72px;
   }
-  .frame { position: absolute; inset: 28px; border: 1px solid rgba(37,99,235,.18); }
-  .mk { position: absolute; width: 12px; height: 12px; border: 2px solid #2563eb; }
-  .mk.tl { top: 22px; left: 22px; border-right: 0; border-bottom: 0; }
-  .mk.tr { top: 22px; right: 22px; border-left: 0; border-bottom: 0; }
-  .mk.bl { bottom: 22px; left: 22px; border-right: 0; border-top: 0; }
-  .mk.br { bottom: 22px; right: 22px; border-left: 0; border-top: 0; }
-  .wrap { position: absolute; inset: 0; padding: 78px 84px; display: flex; flex-direction: column; }
-  .kicker { font: 700 16px ui-monospace, "SFMono-Regular", Menlo, monospace; letter-spacing: .22em; color: #5b6478; text-transform: uppercase; }
-  .brand { display: flex; align-items: center; gap: 16px; margin-top: 14px; }
-  .logo { width: 56px; height: 56px; border-radius: 13px; background: #2563eb; display: flex; align-items: center; justify-content: center; }
-  .brandname { font-size: 40px; font-weight: 800; letter-spacing: -.02em; }
-  h1 { font-size: 64px; line-height: 1.06; font-weight: 800; letter-spacing: -.03em; margin-top: 40px; max-width: 940px; }
-  h1 .grad { background: linear-gradient(92deg, #2563eb, #7c3aed); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .flow { display: flex; align-items: center; gap: 18px; margin-top: 42px; font-size: 26px; font-weight: 700; }
-  .pill { padding: 12px 22px; border-radius: 999px; background: #fff; border: 1px solid #e3e7f2; box-shadow: 0 10px 24px -16px rgba(26,33,64,.45); }
-  .arrow { color: #2563eb; font-size: 30px; }
-  .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font: 600 19px ui-monospace, Menlo, monospace; letter-spacing: .04em; color: #5b6478; }
-  .foot b { color: #161c2d; }
-  .tag { color: #2563eb; }
+  .grid{position:absolute;inset:0;
+    background-image:linear-gradient(#1c2230 1px,transparent 1px),linear-gradient(90deg,#1c2230 1px,transparent 1px);
+    background-size:72px 72px;opacity:.3;
+    -webkit-mask-image:radial-gradient(ellipse 85% 80% at 50% 40%,#000 30%,transparent 80%)}
+  .mono{font-family:"JetBrains Mono",monospace}
+  .brand{display:flex;align-items:center;gap:14px;font-size:30px;font-weight:700;letter-spacing:.02em}
+  .brand em{font-style:normal;color:#ffb03a}
+  .kicker{margin-top:8px;color:#5d6679;font-size:15px;letter-spacing:.22em}
+  h1{margin-top:52px;font-size:92px;line-height:.98;letter-spacing:-.02em}
+  h1 .amber{color:#ffb03a}
+  .strip{position:absolute;left:72px;right:72px;bottom:64px;display:flex;align-items:center;gap:22px}
+  .node{border:1px solid #2a3245;border-radius:14px;background:#10141d;padding:16px 22px;font-size:15px;letter-spacing:.14em;color:#9aa5bb}
+  .node b{display:block;color:#e9edf5;font-size:18px;letter-spacing:.1em}
+  .line{flex:1;border-top:2px dashed #3a4560;position:relative;height:0}
+  .cap{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    border:1px solid rgba(255,176,58,.55);border-radius:12px;background:#171310;
+    padding:12px 18px;color:#ffb03a;font-size:14px;letter-spacing:.16em;white-space:nowrap;
+    box-shadow:0 0 50px -8px rgba(255,176,58,.45);
+  }
+  .cap i{font-style:normal;color:#5fd39a;margin-left:12px}
+  .free{position:absolute;top:64px;right:72px;text-align:right;color:#5d6679;font-size:14px;letter-spacing:.2em}
 </style>
 </head>
 <body>
-  <div class="frame"></div>
-  <span class="mk tl"></span><span class="mk tr"></span><span class="mk bl"></span><span class="mk br"></span>
-  <div class="wrap">
-    <div class="kicker">FIELD NOTES · VOL.01 · CHROME EXTENSION</div>
-    <div class="brand">
-      <span class="logo"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M19 14a1.6 1.6 0 0 1-1.6 1.6H8l-3 3V6.6A1.6 1.6 0 0 1 6.6 5h10.8A1.6 1.6 0 0 1 19 6.6z" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 10.2h5M9.5 12.2h3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-      <span class="brandname">Continue AI</span>
-    </div>
-    <h1>Continue any AI chat — <span class="grad">on another model</span>, in one click.</h1>
-    <div class="flow">
-      <span class="pill">ChatGPT</span><span class="arrow">→</span>
-      <span class="pill">Claude</span><span class="arrow">→</span>
-      <span class="pill">Gemini</span>
-    </div>
-    <div class="foot">
-      <span><b>Without losing context.</b> &nbsp;Local-first · no account.</span>
-      <span class="tag">SCALE 1:1</span>
-    </div>
+  <div class="grid"></div>
+  <div class="brand">
+    <svg width="44" height="44" viewBox="0 0 24 24"><rect x="2.2" y="2.2" width="19.6" height="19.6" rx="4.4" fill="none" stroke="#3a4560" stroke-width="1.5"/><path d="M6.6 12h8.6" stroke="#ffb03a" stroke-width="1.9" stroke-linecap="round"/><path d="M12.4 8.4l4 3.6-4 3.6" fill="none" stroke="#ffb03a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="12" r="1.7" fill="#ffb03a"/></svg>
+    CONTINUE<em>AI</em>
+  </div>
+  <p class="kicker mono">CONTEXT TRANSIT · CHROME EXTENSION</p>
+  <p class="free mono">FREE · NO ACCOUNT<br>LOCAL-FIRST</p>
+  <h1>SWITCH THE MODEL.<br><span class="amber">KEEP THE</span><br><span class="amber">CONVERSATION.</span></h1>
+  <div class="strip">
+    <div class="node mono"><b>CHATGPT</b>SOURCE</div>
+    <div class="line"><span class="cap mono">◈ CTX·CAPSULE<i>INTEGRITY 100%</i></span></div>
+    <div class="node mono"><b>CLAUDE · GEMINI · +6</b>DESTINATION</div>
   </div>
 </body>
 </html>
