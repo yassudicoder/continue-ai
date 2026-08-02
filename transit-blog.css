@@ -1,0 +1,83 @@
+/* ==========================================================================
+   CONTINUE AI — transit-blog.css
+   Brings the legacy long-form pages (blog hub, articles, privacy) in line
+   with the TRANSIT landing page: permanent dark, extension-blue accent,
+   Space Grotesk display + JetBrains Mono technical layer + Inter body.
+   Loads AFTER styles.css / spec-sheet.css / dark.css / creative.css and
+   only overrides — the editorial structure of those pages is unchanged.
+   Pages set <html data-theme="dark"> statically, so dark.css does the
+   heavy surface lifting; this file re-brands it.
+   ========================================================================== */
+
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/space-grotesk-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/space-grotesk-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/jetbrains-mono-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/inter-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/inter-latin-600-normal.woff2") format("woff2")}
+
+/* ---- TRANSIT palette on top of dark.css ---- */
+html[data-theme="dark"]{
+  --bg:#07090d; --soft:#10141d; --ink:#e9edf5; --muted:#9aa5bb;
+  --line:#1c2230; --hair:#1c2230;
+  --blue:#5b8cff; --blue-dark:#79a2ff; --ring:rgba(37,99,235,.35);
+}
+html[data-theme="dark"] body{background:var(--bg)}
+html[data-theme="dark"] .footer{background:#0b0e14}
+html[data-theme="dark"] ::selection{background:#2563eb;color:#fff}
+
+/* ---- typography: match the landing ---- */
+h1,h2,h3,.brand,.plan-price,
+.toctitle,.toc-masthead h1{
+  font-family:"Space Grotesk",system-ui,sans-serif !important;
+  font-weight:700;letter-spacing:-.02em;
+}
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
+kbd,code,pre,
+.post-tag,.article-meta,.toccat,.tocnum,.toc-kicker,
+.cr-cover-kicker,.cr-cover-stamp,.cr-cover-abstract,.cr-cover-idx,
+.cr-meta,.cr-facets,.cr-facet,
+.legal-meta,.tk,.cr-tk-seg span,.cr-tk-static{
+  font-family:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace !important;
+}
+
+/* ---- nav: same bar language as the landing ---- */
+html[data-theme="dark"] .nav{background:rgba(7,9,13,.78);border-bottom:1px solid var(--line)}
+.navlinks a:not(.btn){
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+}
+html[data-theme="dark"] .navlinks a:not(.btn):hover{color:var(--blue)}
+.brand{font-weight:700}
+
+/* the blog keeps the extension-blue CTA exactly like the landing page */
+html[data-theme="dark"] .btn.primary{
+  background:#2563eb;border-color:#2563eb;color:#fff;
+  box-shadow:0 6px 18px rgba(37,99,235,.3);
+}
+html[data-theme="dark"] .btn.primary:hover{background:#2e6ef5}
+
+/* single-theme site now — no toggle */
+.theme-toggle{display:none !important}
+
+/* ---- accents that were still warm/neutral ---- */
+html[data-theme="dark"] .eyebrow{background:rgba(37,99,235,.14);color:#79a2ff}
+html[data-theme="dark"] a:not(.btn):not(.brand):not(.tocrow):hover{color:var(--blue-dark)}
+html[data-theme="dark"] .post-tag{color:#79a2ff}
+
+/* no purple: gradient text becomes the brand blue ramp */
+html[data-theme="dark"] .grad{
+  background:linear-gradient(92deg,#5b8cff,#9dbdff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* wordmark parity with the landing bar */
+.brand span{text-transform:uppercase;letter-spacing:.02em}
+
+/* faint blueprint grid behind editorial headers, like the landing */
+html[data-theme="dark"] .cr-grid{
+  background-image:
+    linear-gradient(#1c2230 1px,transparent 1px),
+    linear-gradient(90deg,#1c2230 1px,transparent 1px) !important;
+  background-size:72px 72px !important;opacity:.5;
+}
